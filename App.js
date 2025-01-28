@@ -1,7 +1,10 @@
 import React, { useState, useCallback } from 'react';
-import { View, Text, TextInput, FlatList, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, ImageBackground } from 'react-native';
 import DetailScreen from './src/components/DetailScreen';
+import SearchBar from './src/components/SearchBar';
+import WordListItem from './src/components/WordListItem';
 import dictionary from './src/data/dictionary';
+import { styles } from './src/styles/AppStyles';
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -31,6 +34,11 @@ const App = () => {
     });
   }, []);
 
+  const handleClear = () => {
+    setSearchTerm('');
+    setResults([]);
+  };
+
   if(selectedWord) {
     return <DetailScreen word={selectedWord} onClose={() => setSelectedWord(null)} />;
   }
@@ -43,26 +51,16 @@ const App = () => {
     >
       <View style={styles.container}>
         <Text style={styles.title}>Kamus Pali - Indonesia (beta version)</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Cari kata dalam bahasa Pali atau Indonesia"
+        <SearchBar
           value={searchTerm}
           onChangeText={handleSearch}
-          clearButtonMode="while-editing"
-          autoCapitalize="none"
-          autoCorrect={false}
+          onClear={handleClear}
         />
         <FlatList
           data={results}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <TouchableOpacity
-              style={styles.resultItem}
-              onPress={() => handleWordPress(item)}
-            >
-              <Text style={styles.paliWord}>{item.pali}</Text>
-              <Text style={styles.translation}>{item.indonesia}</Text>
-            </TouchableOpacity>
+            <WordListItem item={item} onPress={handleWordPress} />
           )}
           ListEmptyComponent={
             searchTerm ? (
@@ -74,66 +72,5 @@ const App = () => {
     </ImageBackground>
   );
 };
-
-const styles = StyleSheet.create({
-  backgroundImage: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-  },
-  container: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: 'rgba(249, 249, 249, 0.5)',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginTop: 40,
-    marginBottom: 16,
-    color: '#333',
-  },
-  input: {
-    height: 50,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 8,
-    paddingHorizontal: 12,
-    marginBottom: 16,
-    backgroundColor: '#fff',
-    fontSize: 16,
-  },
-  resultItem: {
-    padding: 12,
-    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-    borderRadius: 8,
-    marginBottom: 8,
-    elevation: 1,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 1.41,
-  },
-  paliWord: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  translation: {
-    fontSize: 16,
-    color: '#666',
-    marginTop: 4,
-  },
-  noResults: {
-    textAlign: 'center',
-    color: '#999',
-    marginTop: 16,
-    fontStyle: 'italic',
-  },
-});
 
 export default App;

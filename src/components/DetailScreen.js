@@ -1,7 +1,17 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground, BackHandler } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const DetailScreen = ({ word, onClose }) => {
+    useEffect(() => {
+        const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+            onClose();
+            return true;
+        });
+
+        return () => backHandler.remove();
+    }, [onClose]);
+
     return (
         <ImageBackground
             source={require('../../assets/SAGIN.png')}
@@ -10,15 +20,21 @@ const DetailScreen = ({ word, onClose }) => {
         >
             <SafeAreaView style={styles.container}>
                 <View style={styles.header}>
-                    <TouchableOpacity onPress={onClose} style={styles.backButton}>
-                        <Text style={styles.backText}>←</Text>
+                    <TouchableOpacity
+                        onPress={onClose}
+                        style={styles.backButton}
+                        activeOpacity={0.7}
+                    >
+                        <View style={styles.backButtonContent}>
+                            <Icon name="arrow-back" size={24} color="#333" />
+                            <Text style={styles.backText}>Kembali</Text>
+                        </View>
                     </TouchableOpacity>
                 </View>
 
                 <ScrollView style={styles.content}>
                     <Text style={styles.paliWord}>{word.pali}</Text>
                     <Text style={styles.basicTranslation}>{word.translation}</Text>
-
                     <Text style={styles.paliVerse}>{word.paliText}</Text>
                 </ScrollView>
             </SafeAreaView>
@@ -45,11 +61,27 @@ const styles = StyleSheet.create({
         borderBottomColor: '#e0e0e0',
     },
     backButton: {
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        borderRadius: 8,
         padding: 8,
+        elevation: 2,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 1.41,
+    },
+    backButtonContent: {
+        flexDirection: 'row',
+        alignItems: 'center',
     },
     backText: {
-        fontSize: 24,
+        fontSize: 16,
         color: '#333',
+        fontWeight: '500',
+        marginLeft: 8,
     },
     content: {
         flex: 1,
