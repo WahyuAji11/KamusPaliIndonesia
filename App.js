@@ -25,9 +25,9 @@ const App = () => {
 
   const handleWordPress = useCallback((word) => {
     setSelectedWord({
-      title: word.title,
-      paliText: word.paliText,
-      translation: word.translation
+      pali: word.pali,
+      paliText: word.paliVerse,
+      translation: word.detailedIndonesia
     });
   }, []);
 
@@ -42,7 +42,7 @@ const App = () => {
       resizeMode="center"
     >
       <View style={styles.container}>
-        <Text style={styles.title}>Kamus Pali - Indonesia</Text>
+        <Text style={styles.title}>Kamus Pali - Indonesia (beta version)</Text>
         <TextInput
           style={styles.input}
           placeholder="Cari kata dalam bahasa Pali atau Indonesia"

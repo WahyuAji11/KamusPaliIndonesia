@@ -1,82 +1,74 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground } from 'react-native';
 
 const DetailScreen = ({ word, onClose }) => {
     return (
-        <SafeAreaView style={styles.container}>
-            <View style={styles.header}>
-                <TouchableOpacity onPress={onClose} style={styles.backButton}>
-                    <Text style={styles.backText}>←</Text>
-                </TouchableOpacity>
-                <Text style={styles.headerTitle}>{word.title}</Text>
-                <Text style={styles.pageNumber}>1</Text>
-            </View>
-
-            <View style={styles.content}>
-                <View style={styles.paliTextContainer}>
-                    <Text style={styles.paliText}>{word.paliText}</Text>
+        <ImageBackground
+            source={require('../../assets/SAGIN.png')}
+            style={styles.backgroundImage}
+            resizeMode="center"
+        >
+            <SafeAreaView style={styles.container}>
+                <View style={styles.header}>
+                    <TouchableOpacity onPress={onClose} style={styles.backButton}>
+                        <Text style={styles.backText}>←</Text>
+                    </TouchableOpacity>
                 </View>
 
-                <View style={styles.translationContainer}>
-                    <Text style={styles.translationText}>{word.translation}</Text>
-                </View>
-            </View>
-        </SafeAreaView>
+                <ScrollView style={styles.content}>
+                    <Text style={styles.paliWord}>{word.pali}</Text>
+                    <Text style={styles.basicTranslation}>{word.translation}</Text>
+
+                    <Text style={styles.paliVerse}>{word.paliText}</Text>
+                </ScrollView>
+            </SafeAreaView>
+        </ImageBackground>
     );
 };
 
 const styles = StyleSheet.create({
+    backgroundImage: {
+        flex: 1,
+        width: '100%',
+        height: '100%',
+        resizeMode: 'center',
+    },
     container: {
         flex: 1,
-        backgroundColor: '#f5f5f5',
+        padding: 16,
+        backgroundColor: 'rgba(249, 249, 249, 0.5)',
     },
     header: {
         flexDirection: 'row',
-        alignItems: 'center',
         padding: 16,
-        backgroundColor: '#fff',
         borderBottomWidth: 1,
         borderBottomColor: '#e0e0e0',
-        justifyContent: 'space-between',
     },
     backButton: {
         padding: 8,
     },
     backText: {
         fontSize: 24,
-        color: '#666',
-    },
-    headerTitle: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        flex: 1,
-        textAlign: 'center',
-    },
-    pageNumber: {
-        fontSize: 16,
-        color: '#666',
-        width: 30,
-        textAlign: 'right',
+        color: '#333',
     },
     content: {
         flex: 1,
-        padding: 20,
+        padding: 16,
     },
-    paliTextContainer: {
-        marginBottom: 20,
+    paliWord: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#000',
+        marginBottom: 8,
     },
-    paliText: {
-        fontSize: 18,
-        color: '#333',
-        lineHeight: 28,
-        fontStyle: 'italic',
-    },
-    translationContainer: {
-        marginTop: 20,
-    },
-    translationText: {
+    basicTranslation: {
         fontSize: 16,
-        color: '#444',
+        color: '#333',
+        marginBottom: 16,
+    },
+    paliVerse: {
+        fontSize: 16,
+        color: '#333',
         lineHeight: 24,
     },
 });
