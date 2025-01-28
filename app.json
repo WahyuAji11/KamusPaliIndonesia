@@ -4,11 +4,11 @@
     "slug": "KamusPaliIndonesia",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icon_apk.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/icon.png",
+      "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -27,7 +27,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "2ede0afa-bc63-498d-ade6-72b20471f3fe"
+        "projectId": "d7733c1a-bdf1-4f63-9637-9676fe38b5a5"
       }
     }
   }
