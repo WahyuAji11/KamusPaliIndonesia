@@ -19,7 +19,7 @@ Aplikasi ini dibangun menggunakan:
 1. Clone repo ini:  
    ```sh
    git clone https://github.com/WahyuAji11/KamusPaliIndonesia.git
-   cd kamus-pali-indonesia
+   cd KamusPaliIndonesia
    ```
 2. Install dependencies:  
    ```sh
