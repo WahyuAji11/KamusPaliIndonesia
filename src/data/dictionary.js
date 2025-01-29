@@ -222,7 +222,134 @@ const dictionary = [
         indonesia: 'nt. jari, panjangnya seukuran jari; jarak sekitar satu inci.',
         paliVerse: '',
         detailedIndonesia: 'nt. jari, panjangnya seukuran jari; jarak sekitar satu inci.'
-    }
+    },
+    {
+        id: '33',
+        pali: 'aṅgulī (aṅguli)',
+        indonesia: 'f. jari',
+        paliVerse: 'aṅguli',
+        detailedIndonesia: '~patodaka menggamit dengan jari, menggelitik, menggilik-gilik; ~poṭha memetik jari, menjentikkan jari.'
+    },
+    {
+        id: '34',
+        pali: 'accaya',
+        indonesia: 'm. hal berlalu, lewat, melampaui',
+        paliVerse: 'accayena setelah lewat, setelah meninggal, setelah berakhir',
+        detailedIndonesia: 'm. hal berlalu, lewat, melampaui, mengatasi; pelanggaran; kematian, berakhir'
+    },
+    {
+        id: '35',
+        pali: 'acci (accī)',
+        indonesia: 'f. nyala api, pijar, cahaya',
+        paliVerse: 'accī',
+        detailedIndonesia: 'f. nyala api, pijar, cahaya'
+    },
+    {
+        id: '36',
+        pali: 'accha',
+        indonesia: 'a. jernih, bening, tembus pandang',
+        paliVerse: '= akkha; a. merusak, buruk',
+        detailedIndonesia: 'a. jernih, bening, tembus pandang; m. beruang'
+    },
+    {
+        id: '37',
+        pali: 'acchati',
+        indonesia: 'duduk, berdiam',
+        paliVerse: 'acchati',
+        detailedIndonesia: 'duduk, berdiam; tinggal menyendiri; berada, hidup'
+    },
+    {
+        id: '38',
+        pali: 'accharā',
+        indonesia: 'f. bidadari',
+        paliVerse: '[apsara <= Skt. apsarā]',
+        detailedIndonesia: 'f. bidadari (yang melayani dewa dengan tarian dan nyanyian)'
+    },
+    {
+        id: '39',
+        pali: 'acchariya',
+        indonesia: 'a. nt. mengagumkan, luar biasa',
+        paliVerse: 'acchariya',
+        detailedIndonesia: 'a. nt. mengagumkan, luar biasa, menakjubkan, mencengangkan'
+    },
+    {
+        id: '40',
+        pali: 'acchādeti',
+        indonesia: 'menutupi, mengenakan',
+        paliVerse: 'acchādeti',
+        detailedIndonesia: 'menutupi, mengenakan (busana), melingkupi, mengisi'
+    },
+    {
+        id: '41',
+        pali: 'aja',
+        indonesia: 'm. kambing jantan',
+        paliVerse: 'aja, ~pāla',
+        detailedIndonesia: 'kambing jantan, penggembala kambing'
+    },
+    {
+        id: '42',
+        pali: 'ajaka',
+        indonesia: 'a. m. kambing jantan',
+        paliVerse: 'ajikā, ajiyā',
+        detailedIndonesia: 'kambing jantan'
+    },
+    {
+        id: '43',
+        pali: 'ajātabuddhi',
+        indonesia: 'belum memiliki kebijaksanaan',
+        paliVerse: 'ajātabuddhi',
+        detailedIndonesia: 'belum memiliki kebijaksanaan intelektual, masih lugu'
+    },
+    {
+        id: '44',
+        pali: 'ajina',
+        indonesia: 'nt. kulit antelop hitam',
+        paliVerse: 'ajina, ~kkhipa',
+        detailedIndonesia: 'nt. kulit antelop hitam yang dipakai petapa; nt. jubah dari jalinan kulit antelop hitam'
+    },
+    {
+        id: '45',
+        pali: 'ajja',
+        indonesia: 'nt. yang bersifat pribadi, batiniah',
+        paliVerse: 'ajja, ajjhattaṃ',
+        detailedIndonesia: 'nt. yang bersifat pribadi, batiniah; adv. secara pribadi, dari dalam, ke dalam'
+    },
+    {
+        id: '46',
+        pali: 'ajjhācarati',
+        indonesia: 'berperilaku, melanggar',
+        paliVerse: 'ajjhācarati',
+        detailedIndonesia: 'berperilaku sesuai dengan, mencumbui, melanggar'
+    },
+    {
+        id: '47',
+        pali: 'ajjhācāra',
+        indonesia: 'm. perilaku remeh, pelanggaran',
+        paliVerse: 'ajjhācāra',
+        detailedIndonesia: 'm. perilaku remeh (di luar parajika dan sangghadisesa); pelanggaran; hubungan seksual'
+    },
+    {
+        id: '48',
+        pali: 'ajjhāpajjati',
+        indonesia: 'melakukan pelanggaran',
+        paliVerse: 'ajjhāpajjati',
+        detailedIndonesia: 'melakukan pelanggaran, melanggar'
+    },
+    {
+        id: '49',
+        pali: 'ajjhāvasati',
+        indonesia: 'menghuni, tinggal',
+        paliVerse: 'ajjhāvasati',
+        detailedIndonesia: 'menghuni, hidup dalam, tinggal'
+    },
+    {
+        id: '50',
+        pali: 'ajjhāsaya',
+        indonesia: 'm. niat, keinginan',
+        paliVerse: 'ajjhāsaya',
+        detailedIndonesia: 'm. niat, keinginan, tekad, watak, kecenderungan'
+    },
+
     // rest dulu
 ]
 

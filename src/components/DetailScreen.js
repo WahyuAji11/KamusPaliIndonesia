@@ -1,107 +1,83 @@
-import React, { useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground, BackHandler } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import React from 'react';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet, Share } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-const DetailScreen = ({ word, onClose }) => {
-    useEffect(() => {
-        const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-            onClose();
-            return true;
-        });
-
-        return () => backHandler.remove();
-    }, [onClose]);
+const DetailScreen = ({ word, onClose, isFavorite, onToggleFavorite }) => {
+    const handleShare = async () => {
+        try {
+            await Share.share({
+                message: `${word.pali}\n\n${word.translation}`,
+                title: 'Bagikan kata',
+            });
+        } catch(error) {
+            console.error('Error sharing:', error);
+        }
+    };
 
     return (
-        <ImageBackground
-            source={require('../../assets/SAGIN.png')}
-            style={styles.backgroundImage}
-            resizeMode="center"
-        >
-            <SafeAreaView style={styles.container}>
-                <View style={styles.header}>
-                    <TouchableOpacity
-                        onPress={onClose}
-                        style={styles.backButton}
-                        activeOpacity={0.7}
-                    >
-                        <View style={styles.backButtonContent}>
-                            <Icon name="arrow-back" size={24} color="#333" />
-                            <Text style={styles.backText}>Kembali</Text>
-                        </View>
+        <View style={styles.container}>
+            <View style={styles.header}>
+                <TouchableOpacity onPress={onClose} style={styles.closeButton}>
+                    <Icon name="arrow-left" size={24} color="#333" />
+                </TouchableOpacity>
+                <View style={styles.actions}>
+                    <TouchableOpacity onPress={handleShare} style={styles.actionButton}>
+                        <Icon name="share" size={24} color="#333" />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={onToggleFavorite} style={styles.actionButton}>
+                        <Icon name={isFavorite ? "star" : "star-o"} size={24} color={isFavorite ? "#FFD700" : "#333"} />
                     </TouchableOpacity>
                 </View>
-
-                <ScrollView style={styles.content}>
-                    <Text style={styles.paliWord}>{word.pali}</Text>
-                    <Text style={styles.basicTranslation}>{word.translation}</Text>
-                    <Text style={styles.paliVerse}>{word.paliText}</Text>
-                </ScrollView>
-            </SafeAreaView>
-        </ImageBackground>
+            </View>
+            <ScrollView style={styles.content}>
+                <Text style={styles.paliWord}>{word.pali}</Text>
+                {word.paliText && <Text style={styles.paliText}>{word.paliText}</Text>}
+                <Text style={styles.translation}>{word.translation}</Text>
+            </ScrollView>
+        </View>
     );
 };
 
 const styles = StyleSheet.create({
-    backgroundImage: {
-        flex: 1,
-        width: '100%',
-        height: '100%',
-        resizeMode: 'center',
-    },
     container: {
         flex: 1,
-        padding: 16,
-        backgroundColor: 'rgba(249, 249, 249, 0.5)',
+        backgroundColor: '#fff',
     },
     header: {
         flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         padding: 16,
         borderBottomWidth: 1,
-        borderBottomColor: '#e0e0e0',
+        borderBottomColor: '#eee',
     },
-    backButton: {
-        backgroundColor: 'rgba(255, 255, 255, 0.9)',
-        borderRadius: 8,
-        padding: 8,
-        elevation: 2,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 1,
-        },
-        shadowOpacity: 0.2,
-        shadowRadius: 1.41,
-    },
-    backButtonContent: {
+    actions: {
         flexDirection: 'row',
-        alignItems: 'center',
     },
-    backText: {
-        fontSize: 16,
-        color: '#333',
-        fontWeight: '500',
-        marginLeft: 8,
+    actionButton: {
+        marginLeft: 16,
+        padding: 4,
     },
     content: {
         flex: 1,
         padding: 16,
     },
     paliWord: {
-        fontSize: 20,
+        fontSize: 24,
         fontWeight: 'bold',
-        color: '#000',
         marginBottom: 8,
-    },
-    basicTranslation: {
-        fontSize: 16,
         color: '#333',
+    },
+    paliText: {
+        fontSize: 18,
         marginBottom: 16,
+        color: '#666',
+        fontStyle: 'italic',
     },
-    paliVerse: {
+    translation: {
         fontSize: 16,
-        color: '#333',
         lineHeight: 24,
+        color: '#333',
     },
 });
 

@@ -8,6 +8,8 @@ const WordListItem = ({ item, onPress }) => (
     >
         <Text style={styles.paliWord}>{item.pali}</Text>
         <Text style={styles.translation}>{item.indonesia}</Text>
+        <Text style={styles.smallText}>{item.paliVerse}</Text>
+        <Text style={styles.smallText}>{item.detailedIndonesia}</Text>
     </TouchableOpacity>
 );
 
@@ -36,6 +38,11 @@ const styles = StyleSheet.create({
         color: '#666',
         marginTop: 4,
     },
+    smallText: {
+        fontSize: 14,
+        color: '#666',
+        marginTop: 2,
+    }
 });
 
 export default WordListItem;
