@@ -349,6 +349,146 @@ const dictionary = [
         paliVerse: 'ajjhāsaya',
         detailedIndonesia: 'm. niat, keinginan, tekad, watak, kecenderungan'
     },
+    {
+        id: '51',
+        pali: 'ajjhupagacchati',
+        indonesia: 'mendatangi, tiba pada',
+        paliVerse: 'ajjhupagacchati',
+        detailedIndonesia: 'mendatangi, tiba pada, memperoleh, menyetujui, menerima; rela berkeliling'
+    },
+    {
+        id: '52',
+        pali: 'ajjhupekkhati',
+        indonesia: 'melihat, menyaksikan, mengamati',
+        paliVerse: 'ajjhupekkhati',
+        detailedIndonesia: 'melihat, menyaksikan, mengamati, memandang dengan penuh perhatian, mengawasi, menjaga; mengabaikan, tidak peduli, acuh tak acuh'
+    },
+    {
+        id: '53',
+        pali: 'ajjhesanā',
+        indonesia: 'permohonan, permintaan',
+        paliVerse: 'ajjhesanā',
+        detailedIndonesia: 'f. permohonan, permintaan, undangan, ajakan'
+    },
+    {
+        id: '54',
+        pali: 'ajjhokāsa',
+        indonesia: 'udara terbuka, ruang terbuka',
+        paliVerse: 'ajjhokāsa',
+        detailedIndonesia: 'm. udara terbuka, ruang terbuka'
+    },
+    {
+        id: '55',
+        pali: 'ajjhogāhati',
+        indonesia: 'terjun ke dalam, memasuki, masuk ke dalam',
+        paliVerse: 'ajjhogāhati (ajjhogāheti)',
+        detailedIndonesia: 'terjun ke dalam, memasuki, masuk ke dalam'
+    },
+    {
+        id: '56',
+        pali: 'añjali',
+        indonesia: 'rangkaian tangan, sikap penghormatan dengan kedua tangan',
+        paliVerse: 'añjali',
+        detailedIndonesia: 'm. rangkaian tangan, sikap penghormatan dengan kedua tangan di depan dada; añjaliṃ paṇāmeti memberi hormat dengan merangkapkan tangan'
+    },
+    {
+        id: '57',
+        pali: 'añña',
+        indonesia: 'lain, yang lain',
+        paliVerse: 'añña, aññamaññaṃ, aññena aññaṃ',
+        detailedIndonesia: 'a. lain, yang lain; saling, satu sama lain; menjawab dengan jawaban lain (lain pertanyaan lain jawaban)'
+    },
+    {
+        id: '58',
+        pali: 'aññatara',
+        indonesia: 'suatu, tertentu',
+        paliVerse: 'aññatara',
+        detailedIndonesia: 'suatu, tertentu (=> eka)'
+    },
+    {
+        id: '59',
+        pali: 'aññatra',
+        indonesia: 'di tempat lain, di suatu tempat lain; selain, kecuali',
+        paliVerse: 'aññatra, nāññatra',
+        detailedIndonesia: 'di tempat lain, di suatu tempat lain; selain, kecuali; kiṃ aññatra siapa lagi selain; walaupun ... tidak ..., terlepas dari apakah ... atau tidak'
+    },
+    {
+        id: '60',
+        pali: 'aññathatta',
+        indonesia: 'perubahan, pengubahan, perpindahan, perbedaan',
+        paliVerse: 'aññathatta',
+        detailedIndonesia: 'nt. perubahan, pengubahan, perpindahan, perbedaan; kesalahan, kekeliruan, pengandaian; plin-plan, perubahan pikiran, kebimbangan, keragu-raguan, terombang-ambing'
+    },
+    {
+        id: '61',
+        pali: 'aññathā',
+        indonesia: 'dengan cara berbeda, sebaliknya',
+        paliVerse: 'aññathā',
+        detailedIndonesia: 'adv. dengan cara berbeda, sebaliknya, secara lain'
+    },
+    {
+        id: '62',
+        pali: 'aññā',
+        indonesia: 'pengetahuan, pemahaman, pengertian, pengetahuan sempurna, pengetahuan tertinggi',
+        paliVerse: 'aññā, aññāya saṇṭhaheyya',
+        detailedIndonesia: 'f. pengetahuan, pemahaman, pengertian, pengetahuan sempurna, pengetahuan tertinggi; dapat meraih pengetahuan tertinggi'
+    },
+    {
+        id: '63',
+        pali: 'aṭṭa',
+        indonesia: 'podium, panggung, menara pengintai',
+        paliVerse: '~ssara m. suara mengerang atau merintih.',
+        detailedIndonesia: 'aṭṭa  m. podium, panggung, menara pengintai;  m. perkara hukum, kasus, sebab, alasan;  a. menderita, tersiksa, dilanda, dianiaya, diganggu, disakiti'
+    },
+    {
+        id: '64',
+        pali: 'aṭṭaka',
+        indonesia: 'panggung bertiang, perancah, tangga-tangga',
+        paliVerse: 'aṭṭaka',
+        detailedIndonesia: 'm. panggung yang dipasang di atas tiang-tiang atau pohon, perancah, tangga-tangga'
+    },
+    {
+        id: '65',
+        pali: 'aṭṭiyati',
+        indonesia: 'cemas, risau, gelisah, merasa canggung',
+        paliVerse: 'aṭṭiyati',
+        detailedIndonesia: 'berada dalam kesulitan atau kecemasan, cemas, risau, gelisah, merasa canggung'
+    },
+    {
+        id: '66',
+        pali: 'aṭṭha',
+        indonesia: 'delapan; makna, arti',
+        paliVerse: 'aṭṭha, attha',
+        detailedIndonesia: ' a. delapan [asta <= Skt. aṣṭa];  = attha, makna, arti'
+    },
+    {
+        id: '67',
+        pali: 'aṭṭhama',
+        indonesia: 'kedelapan, ke-8, VIII',
+        paliVerse: 'aṭṭhama',
+        detailedIndonesia: 'kedelapan, ke-8, VIII'
+    },
+    {
+        id: '68',
+        pali: 'aṭṭhi',
+        indonesia: 'tulang, biji (buah)',
+        paliVerse: 'aṭṭhi',
+        detailedIndonesia: 'nt. tulang; biji (buah)'
+    },
+    {
+        id: '69',
+        pali: 'aṭṭhika',
+        indonesia: 'tulang, biji (buah)',
+        paliVerse: 'aṭṭhika',
+        detailedIndonesia: 'nt. tulang; biji (buah)'
+    },
+    {
+        id: '70',
+        pali: 'aḍḍha',
+        indonesia: 'setengah; kaya, makmur',
+        paliVerse: 'aḍḍha (= addha)',
+        detailedIndonesia: ' setengah;  a. kaya, makmur; ~sāra a. bernilai setengah'
+    },
 
     // rest dulu
 ]
