@@ -1,9 +1,9 @@
 # 📱 Kamus Pali-Indonesia  
 
 ## 📖 Tentang Aplikasi Ini  
-Aplikasi **Kamus Pali-Indonesia** dibuat sebagai **bentuk pelimpahan jasa**, bukan sekadar proyek pribadi atau portofolio. Aplikasi ini bertujuan untuk **membantu Sangha, pelajar bahasa Pali, serta siapa saja yang ingin mempelajari bahasa Pali** dengan lebih mudah.  
+Aplikasi **Kamus Pali-Indonesia** dibuat sebagai **bentuk pelimpahan jasa** dan dipersembahkan kepada **Sangha**, bukan sekadar proyek pribadi atau portofolio. Aplikasi ini dibuat atas **usulan Bhante Nur Cittasamvaro** dan bertujuan untuk **membantu Sangha, pelajar bahasa Pali, serta siapa saja yang ingin mempelajari bahasa Pali** dengan lebih mudah.  
 
-Selain itu, aplikasi ini **open source**, sehingga siapa saja bisa ikut serta dalam pengembangannya. Jika ada yang ingin **melanjutkan, menyempurnakan, atau berkontribusi**, saya sangat terbuka terhadap **kritik, saran, dan kolaborasi**.  
+Selain itu, aplikasi ini **bersifat open source**, sehingga siapa saja dapat ikut serta dalam pengembangannya. Jika ada yang ingin **melanjutkan, menyempurnakan, atau berkontribusi**, saya sangat terbuka terhadap **kritik, saran, dan kolaborasi**.  
 
 ## 💡 Tujuan  
 - Menyediakan kamus Pali-Indonesia yang mudah digunakan.  
@@ -20,15 +20,15 @@ Aplikasi ini dibangun menggunakan:
    ```sh
    git clone https://github.com/WahyuAji11/KamusPaliIndonesia.git
    cd KamusPaliIndonesia
-   ```
+   ```  
 2. Install dependencies:  
    ```sh
    npm install
-   ```
+   ```  
 3. Jalankan aplikasi di Expo:  
    ```sh
    npx expo start
-   ```
+   ```  
 
 ## 🤝 Kontribusi  
 Bagi yang ingin ikut berkontribusi:  
