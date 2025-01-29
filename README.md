@@ -18,8 +18,8 @@ Aplikasi ini dibangun menggunakan:
 ## 📲 Cara Menjalankan Aplikasi  
 1. Clone repo ini:  
    ```sh
-   git clone https://github.com/username/kamus-pali-indonesia.git
-   cd kamus-pali-indonesia
+   git clone https://github.com/WahyuAji11/KamusPaliIndonesia.git
+   cd KamusPaliIndonesia
    ```  
 2. Install dependencies:  
    ```sh
