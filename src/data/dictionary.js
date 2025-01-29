@@ -489,6 +489,706 @@ const dictionary = [
         paliVerse: 'aḍḍha (= addha)',
         detailedIndonesia: ' setengah;  a. kaya, makmur; ~sāra a. bernilai setengah'
     },
+    {
+        id: '71',
+        pali: 'aṇḍa',
+        indonesia: 'telur, buah zakar',
+        paliVerse: 'aṇḍa',
+        detailedIndonesia: 'nt. telur; buah zakar/pelir; ~kosa m. cangkang telur; ~ūpaka nt. kumparan, bantalan'
+    },
+    {
+        id: '72',
+        pali: 'ataccha',
+        indonesia: 'tidak benar, salah',
+        paliVerse: 'ataccha',
+        detailedIndonesia: 'nt. tidak benar, salah'
+    },
+    {
+        id: '73',
+        pali: 'atikaḍḍhati',
+        indonesia: 'menarik dengan kuat, bersusah payah, menyakiti',
+        paliVerse: 'atikaḍḍhati',
+        detailedIndonesia: 'menghela kuat, sulit, sukar, bersusah payah; menyinggung perasaan, melukai'
+    },
+    {
+        id: '74',
+        pali: 'atikkanta',
+        indonesia: 'melewati, melampaui, melebihi',
+        paliVerse: 'atikkanta',
+        detailedIndonesia: 'pp dari atikkamati: melewati, melebihi, melampaui, mengatasi; ~mānusaka melebihi manusia biasa'
+    },
+    {
+        id: '75',
+        pali: 'atikkamati',
+        indonesia: 'melewati, melampaui, mengatasi',
+        paliVerse: 'atikkamati',
+        detailedIndonesia: 'melewati, melampaui, mengatasi, melebihi, mengalahkan'
+    },
+    {
+        id: '76',
+        pali: 'aticārin',
+        indonesia: 'berzina, menyeleweng, berselingkuh',
+        paliVerse: 'aticārin',
+        detailedIndonesia: 'a. berbuat serong, berzina, menyeleweng, berselingkuh'
+    },
+    {
+        id: '77',
+        pali: 'atithi',
+        indonesia: 'tamu, pendatang',
+        paliVerse: 'atithi',
+        detailedIndonesia: 'm. tamu, orang asing, pendatang'
+    },
+    {
+        id: '78',
+        pali: 'atipāta',
+        indonesia: 'penyerangan, pembunuhan, penghancuran',
+        paliVerse: 'atipāta',
+        detailedIndonesia: 'm. penyerangan, pembunuhan, penghancuran, pembinasaan'
+    },
+    {
+        id: '79',
+        pali: 'atimaññati',
+        indonesia: 'memandang rendah, meremehkan',
+        paliVerse: 'atimaññati',
+        detailedIndonesia: 'memandang rendah, meremehkan, mengabaikan'
+    },
+    {
+        id: '80',
+        pali: 'atimāna',
+        indonesia: 'keangkuhan, kesombongan',
+        paliVerse: 'atimāna',
+        detailedIndonesia: 'm. keangkuhan, kesombongan, tinggi hati'
+    },
+    {
+        id: '81',
+        pali: 'atireka',
+        indonesia: 'berlebihan, melebihi',
+        paliVerse: 'atireka',
+        detailedIndonesia: 'a. berlebihan, kebanyakan, melebihi, ekstra; ~cīvara jubah ekstra; ~pāda lebih dari satu pāda'
+    },
+    {
+        id: '82',
+        pali: 'ativatta',
+        indonesia: 'terlampaui, teratasi, takluk',
+        paliVerse: 'ativatta',
+        detailedIndonesia: 'pp dari ativattati: terlampaui, teratasi, takluk'
+    },
+    {
+        id: '83',
+        pali: 'ativattati',
+        indonesia: 'melewati, melampaui, menguasai',
+        paliVerse: 'ativattati',
+        detailedIndonesia: 'melewati, melampaui, mengarungi, menguasai, menaklukkan'
+    },
+    {
+        id: '84',
+        pali: 'atīta',
+        indonesia: 'yang lampau, masa lalu',
+        paliVerse: 'atīta',
+        detailedIndonesia: 'a. yang lampau, yang telah lewat; nt. masa lampau; atīte di zaman lampau'
+    },
+    {
+        id: '85',
+        pali: 'atta',
+        indonesia: 'jiwa, diri yang hakiki',
+        paliVerse: 'atta',
+        detailedIndonesia: 'm. jiwa, diri yang hakiki; sendiri, diri sendiri (attānaṃ sukheti pīṇeti ia membuat dirinya bahagia dan puas)'
+    },
+    {
+        id: '86',
+        pali: 'attabhāva',
+        indonesia: 'kepribadian, individu, wujud',
+        paliVerse: 'attabhāva',
+        detailedIndonesia: 'm. sifat pribadi; pribadi, individu, kepribadian, orang, oknum, makhluk hidup, wujud, penampakan, sifat, tabiat, kualitas batin; kehidupan, kelahiran kembali'
+    },
+    {
+        id: '87',
+        pali: 'attha',
+        indonesia: 'kesejahteraan, keuntungan, makna',
+        paliVerse: 'attha',
+        detailedIndonesia: 'm. kesejahteraan, keuntungan, berkah; harta kekayaan, kebutuhan, keperluan; kebajikan, kegunaan, manfaat; keinginan, tujuan, objek, akibat, arti, makna, alasan; hal, perkara, kejadian, kasus'
+    },
+    {
+        id: '88',
+        pali: 'attharaṇa',
+        indonesia: 'penutup, seprai, alas',
+        paliVerse: 'attharaṇa',
+        detailedIndonesia: 'nt. penutup, seprai, kain alas, pengalas, pelapik, permadani, babut'
+    },
+    {
+        id: '89',
+        pali: 'atthi',
+        indonesia: 'ada, eksis',
+        paliVerse: 'atthi',
+        detailedIndonesia: 'v. ada, eksis'
+    },
+    {
+        id: '90',
+        pali: 'atra',
+        indonesia: 'di sini',
+        paliVerse: 'atra',
+        detailedIndonesia: 'adv. di sini'
+    },
+    {
+        id: '91',
+        pali: 'atha',
+        indonesia: 'kemudian, lalu, maka',
+        paliVerse: 'atha',
+        detailedIndonesia: 'dan, dan juga, kemudian, lantas, lalu, maka; atha kho waktu itu, lalu, lantas, sekarang, sementara itu, sebaliknya'
+    },
+    {
+        id: '92',
+        pali: 'addha',
+        indonesia: 'setengah, perjalanan, jangka waktu',
+        paliVerse: 'addha',
+        detailedIndonesia: ' (= aḍḍha) setengah;  jalan, perjalanan; lintasan; jangka waktu (dīghaṃ addhānaṃ jangka waktu sangat lama), periode, masa (tayo addhā tiga masa)'
+    },
+    {
+        id: '93',
+        pali: 'adhikaraṇa',
+        indonesia: 'perkara, kasus, perselisihan',
+        paliVerse: 'adhikaraṇa',
+        detailedIndonesia: 'nt. pendampingan, penjagaan, pengawasan, pengelolaan, administrasi; hubungan, rujukan, alasan, sebab, akibat; kasus, perkara, masalah, pokok soal, topik pembahasan, perselisihan'
+    },
+    {
+        id: '94',
+        pali: 'adhigacchati',
+        indonesia: 'mencapai, menemukan, memahami',
+        paliVerse: 'adhigacchati',
+        detailedIndonesia: 'mencapai, meraih, menemukan, menyelami, memahami, mewujudkan'
+    },
+    {
+        id: '95',
+        pali: 'adhiṭṭhāti',
+        indonesia: 'menetapkan, bertekad',
+        paliVerse: 'adhiṭṭhāti',
+        detailedIndonesia: 'berdiri (di atas), bersikukuh; memusatkan perhatian pada, mengarahkan pikiran seseorang pada, berketetapan hati, bertekad, mengharapkan, melakukan, menjalankan, mempraktikkan, memelihara, menyelenggarakan, menjaga, berkemaun, menentukan, memastikan'
+    },
+    {
+        id: '96',
+        pali: 'adhiṭṭhāna',
+        indonesia: 'ketetapan, tekad, keputusan',
+        paliVerse: 'adhiṭṭhāna',
+        detailedIndonesia: 'nt. pijakan yang kokoh; tekad, ketetapan hati, kekukuhan pada; a. yang sudah ditetapkan atau ditekadkan'
+    },
+    {
+        id: '97',
+        pali: 'adhivāsana',
+        indonesia: 'persetujuan, izin, kesabaran',
+        paliVerse: 'adhivāsana',
+        detailedIndonesia: 'nt. persetujuan, izin atau perkenan, kesabaran'
+    },
+    {
+        id: '98',
+        pali: 'adho',
+        indonesia: 'di bawah',
+        paliVerse: 'adho',
+        detailedIndonesia: 'adv. di bawah; adhakkhaka m. di bawah tulang leher'
+    },
+    {
+        id: '99',
+        pali: 'anattā',
+        indonesia: 'bukan diri, tanpa inti kekal',
+        paliVerse: 'anattā',
+        detailedIndonesia: 'nt. tiada aku, bukan diri, tiada suatu inti atau substansi yang kekal'
+    },
+    {
+        id: '100',
+        pali: 'anāgata',
+        indonesia: 'masa depan, yang akan datang',
+        paliVerse: 'anāgata',
+        detailedIndonesia: 'a. belum datang, kelak, di kemudian hari, di masa mendatang, belum terjadi, belum sampai, belum berhasil'
+    },
+    {
+        id: '101',
+        pali: 'anāgāmin',
+        indonesia: 'yang tidak akan kembali lagi',
+        paliVerse: 'anāgāmin',
+        detailedIndonesia: 'a. m. yang takkan kembali lagi, yang telah mencapai tingkat kesucian ketiga'
+    },
+    {
+        id: '102',
+        pali: 'anicca',
+        indonesia: 'tidak kekal, sementara',
+        paliVerse: 'anicca',
+        detailedIndonesia: 'a. nt. tak langgeng, tak kekal, sementara'
+    },
+    {
+        id: '103',
+        pali: 'anissita',
+        indonesia: 'bebas, tidak bergantung',
+        paliVerse: 'anissita',
+        detailedIndonesia: 'a. tidak ditopang oleh, tidak menempel pada, bebas, terbebas'
+    },
+    {
+        id: '104',
+        pali: 'anukampā',
+        indonesia: 'kasih sayang, belas kasih',
+        paliVerse: 'anukampā',
+        detailedIndonesia: 'f. kasihan, sayang'
+    },
+    {
+        id: '105',
+        pali: 'anupassati',
+        indonesia: 'melihat, mengamati, merenungkan',
+        paliVerse: 'anupassati',
+        detailedIndonesia: 'melihat, menilik; merenungkan, mengamati, mencermati'
+    },
+    {
+        id: '106',
+        pali: 'anussati',
+        indonesia: 'ingatan, perenungan',
+        paliVerse: 'anussati',
+        detailedIndonesia: 'f. ingatan, hal mengingat atau mengenang, perenungan, hal menyadari, hal mengarahkan pikiran pada'
+    },
+    {
+        id: '107',
+        pali: 'anussarati',
+        indonesia: 'mengenang, mengingat-ingat',
+        paliVerse: 'anussarati',
+        detailedIndonesia: 'mengingat-ingat, mengenang, merenungkan, menyadari, mencamkan'
+    },
+    {
+        id: '108',
+        pali: 'anuttara',
+        indonesia: 'tiada banding, tiada taranya',
+        paliVerse: 'anuttara',
+        detailedIndonesia: 'a. tiada yang melebihinya, tiada banding, tiada taranya'
+    },
+    {
+        id: '109',
+        pali: 'apaneti',
+        indonesia: 'membawa pergi, memindahkan',
+        paliVerse: 'apaneti',
+        detailedIndonesia: 'membawa pergi, mengambil pergi, memindahkan'
+    },
+    {
+        id: '110',
+        pali: 'apāya',
+        indonesia: 'alam rendah, kemerosotan',
+        paliVerse: 'apāya',
+        detailedIndonesia: 'm. alam rendah; pergi, hilang, musnah, bocor, kuras, tergelincir, merosot; ~mukha nt. jalan menuju kehancuran atau kemerosotan'
+    },
+    {
+        id: '111',
+        pali: 'api',
+        indonesia: 'juga, bahkan, walaupun',
+        paliVerse: 'api',
+        detailedIndonesia: 'juga, lagi, pula, dan juga; namun, bahkan, mungkin, walaupun; mungkin, bisa jadi; app eva nāma tentu saja, ya, saya pikir, saya kira, mungkin, bisa jadi, barangkali'
+    },
+    {
+        id: '112',
+        pali: 'apuñña',
+        indonesia: 'kemudaratan, keburukan',
+        paliVerse: 'apuñña',
+        detailedIndonesia: 'nt. kemudaratan, keburukan, tidak bajik'
+    },
+    {
+        id: '113',
+        pali: 'apekkha',
+        indonesia: 'mengharapkan, menantikan',
+        paliVerse: 'apekkha',
+        detailedIndonesia: 'a. menantikan, mengharapkan, mencari, menginginkan, berniat'
+    },
+    {
+        id: '114',
+        pali: 'appa',
+        indonesia: 'sedikit, kecil',
+        paliVerse: 'appa',
+        detailedIndonesia: 'a. sedikit, kecil, secuil, sekelumit, sepele; nt. sedikit, secuil, sepele'
+    },
+    {
+        id: '115',
+        pali: 'appamāda',
+        indonesia: 'kewaspadaan, keseriusan',
+        paliVerse: 'appamāda',
+        detailedIndonesia: 'm. ketidaklengahan, kewaspadaan, hal penuh sadar, tak leka, keseriusan'
+    },
+    {
+        id: '116',
+        pali: 'abbuda',
+        indonesia: 'janin awal, tumor, neraka',
+        paliVerse: 'abbuda',
+        detailedIndonesia: 'm. janin 1-2 bulan setelah pembuahan; tumor, bisul, seriawan; suatu bilangan yang sangat besar; neraka'
+    },
+    {
+        id: '117',
+        pali: 'accaya',
+        indonesia: 'pelanggaran, berlalu',
+        paliVerse: 'accaya',
+        detailedIndonesia: 'm. hal berlalu, lewat, hal melewati atau melampaui, mengatasi, menaklukkan; hal melanggar, pelanggaran; meninggal dunia, berakhir, mati'
+    },
+    {
+        id: '118',
+        pali: 'accha',
+        indonesia: 'jernih, bening',
+        paliVerse: 'accha',
+        detailedIndonesia: ' a. jernih, bening, tembus pandang, transparan;  m. beruang;  = akkha;  a. merusak, menyakitkan, jahat, buruk'
+    },
+    {
+        id: '119',
+        pali: 'accharā',
+        indonesia: 'bidadari',
+        paliVerse: 'accharā',
+        detailedIndonesia: 'f. bidadari (yang melayani dewa dengan tarian dan nyanyian)'
+    },
+    {
+        id: '120',
+        pali: 'āgacchati',
+        indonesia: 'datang, tiba',
+        paliVerse: 'āgacchati',
+        detailedIndonesia: 'datang ke, mendekati, pulang atau kembali, tiba, datang kembali; mencapai, menghasilkan, pantas menerima'
+    },
+    {
+        id: '121',
+        pali: 'āgata',
+        indonesia: 'datang, tiba, berhasil',
+        paliVerse: 'āgata',
+        detailedIndonesia: 'pp dari āgacchati: datang, tiba, mencapai, sampai, berhasil, terjadi; yang diwariskan secara turun-temurun'
+    },
+    {
+        id: '122',
+        pali: 'āgama',
+        indonesia: 'ajaran, kitab suci',
+        paliVerse: 'āgama',
+        detailedIndonesia: 'm. kedatangan, pendekatan, hasil; yang telah datang secara turun-temurun, sumber, acuan, naskah, kitab suci'
+    },
+    {
+        id: '123',
+        pali: 'āghāta',
+        indonesia: 'kemarahan, kebencian, dendam',
+        paliVerse: 'āghāta',
+        detailedIndonesia: 'm. kemarahan, niat jahat, kebencian, kedengkian, dendam'
+    },
+    {
+        id: '124',
+        pali: 'ācarati',
+        indonesia: 'melakukan, berbuat, bertindak',
+        paliVerse: 'ācarati',
+        detailedIndonesia: 'mempraktikkan, melakukan, berbuat, bertindak, biasa; menginjaki, menapaki, melewati, melalui'
+    },
+    {
+        id: '125',
+        pali: 'ācariya',
+        indonesia: 'guru, pengajar',
+        paliVerse: 'ācariya',
+        detailedIndonesia: 'm. guru, pakar'
+    },
+    {
+        id: '126',
+        pali: 'ādatta',
+        indonesia: 'yang telah diambil, digenggam',
+        paliVerse: 'ādatta',
+        detailedIndonesia: 'pp dari ādadāti: yang telah diambil atau digenggam, yang telah diterima atau dianggap'
+    },
+    {
+        id: '127',
+        pali: 'ādāya',
+        indonesia: 'setelah mengambil, membawa',
+        paliVerse: 'ādāya',
+        detailedIndonesia: 'setelah mengambil atau menerima atau melakukan; sambil membawa, mengusung, mengambil, menggunakan, menerima; termasuk'
+    },
+    {
+        id: '128',
+        pali: 'āditta',
+        indonesia: 'terbakar, menyala',
+        paliVerse: 'āditta',
+        detailedIndonesia: 'm. menyala, membara, terbakar, berpijar'
+    },
+    {
+        id: '129',
+        pali: 'ādīnava',
+        indonesia: 'bahaya, kerugian',
+        paliVerse: 'ādīnava',
+        detailedIndonesia: 'm. keadaan merugikan, bahaya'
+    },
+    {
+        id: '130',
+        pali: 'ānanda',
+        indonesia: 'kebahagiaan, nama siswa Buddha',
+        paliVerse: 'ānanda',
+        detailedIndonesia: 'm. kebahagiaan, sukacita, kegembiraan; juga nama murid utama Buddha'
+    },
+    {
+        id: '131',
+        pali: 'ānisaṃsa',
+        indonesia: 'manfaat, berkah, keuntungan',
+        paliVerse: 'ānisaṃsa',
+        detailedIndonesia: 'm. terpuji, manfaat, faedah, guna, hasil, kemaslahatan, berkah, keuntungan'
+    },
+    {
+        id: '132',
+        pali: 'āneti',
+        indonesia: 'membawa, mengambil',
+        paliVerse: 'āneti',
+        detailedIndonesia: 'membawa, membawa menuju, mengambil, meraih, menyampaikan, membawa kembali'
+    },
+    {
+        id: '133',
+        pali: 'āpajjati',
+        indonesia: 'mengalami, mencapai, jatuh ke dalam',
+        paliVerse: 'āpajjati',
+        detailedIndonesia: 'mencapai, tiba di, bertemu dengan, mengalami, membuat, menghasilkan, menunjukkan'
+    },
+    {
+        id: '134',
+        pali: 'āpatti',
+        indonesia: 'pelanggaran, kesalahan',
+        paliVerse: 'āpatti',
+        detailedIndonesia: 'f. pelanggaran (winaya), kesalahan'
+    },
+    {
+        id: '135',
+        pali: 'āpātha',
+        indonesia: 'cakupan, jangkauan, fokus',
+        paliVerse: 'āpātha',
+        detailedIndonesia: 'm. lingkup, cakupan, jangkauan, rentang, fokus, medan (kesadaran atau persepsi), bidikan, penampakan'
+    },
+    {
+        id: '136',
+        pali: 'ābādha',
+        indonesia: 'penyakit, sakit',
+        paliVerse: 'ābādha',
+        detailedIndonesia: 'm. sakit, penyakit'
+    },
+    {
+        id: '137',
+        pali: 'ābharaṇa',
+        indonesia: 'perhiasan, hiasan',
+        paliVerse: 'ābharaṇa',
+        detailedIndonesia: 'nt. yang dipakai atau dikenakan yakni hiasan atau dandanan'
+    },
+    {
+        id: '138',
+        pali: 'āmisa',
+        indonesia: 'daging mentah, materi',
+        paliVerse: 'āmisa',
+        detailedIndonesia: 'nt. daging mentah; sesuatu yang mentah atau belum diolah; jasmaniah, material, fisik, materi; makanan, kenikmatan duniawi'
+    },
+    {
+        id: '139',
+        pali: 'āyata',
+        indonesia: 'panjang, luas',
+        paliVerse: 'āyata',
+        detailedIndonesia: 'a. panjang, luas'
+    },
+    {
+        id: '140',
+        pali: 'āyu',
+        indonesia: 'usia, umur',
+        paliVerse: 'āyu',
+        detailedIndonesia: 'nt. usia, umur, kehidupan'
+    },
+    {
+        id: '141',
+        pali: 'icchati',
+        indonesia: 'menghendaki, menginginkan',
+        paliVerse: 'icchati',
+        detailedIndonesia: 'v. menghendaki, menginginkan, berharap, mengidamkan'
+    },
+    {
+        id: '142',
+        pali: 'idaṃ',
+        indonesia: 'ini',
+        paliVerse: 'idaṃ',
+        detailedIndonesia: 'pron. ini'
+    },
+    {
+        id: '143',
+        pali: 'indriya',
+        indonesia: 'indria, kekuatan batin',
+        paliVerse: 'indriya',
+        detailedIndonesia: 'nt. indria, kekuatan batin, kemampuan'
+    },
+    {
+        id: '144',
+        pali: 'iriyāpatha',
+        indonesia: 'gerakan tubuh, postur',
+        paliVerse: 'iriyāpatha',
+        detailedIndonesia: 'm. gerakan tubuh, postur, sikap tubuh'
+    },
+    {
+        id: '145',
+        pali: 'issariya',
+        indonesia: 'kekuasaan, otoritas',
+        paliVerse: 'issariya',
+        detailedIndonesia: 'nt. kekuasaan, otoritas, supremasi'
+    },
+    {
+        id: '146',
+        pali: 'itthi',
+        indonesia: 'wanita, perempuan',
+        paliVerse: 'itthi',
+        detailedIndonesia: 'f. wanita, perempuan'
+    },
+    {
+        id: '147',
+        pali: 'uggacchati',
+        indonesia: 'naik, muncul, terbit',
+        paliVerse: 'uggacchati',
+        detailedIndonesia: 'v. naik, muncul, terbit'
+    },
+    {
+        id: '148',
+        pali: 'ujjhāyati',
+        indonesia: 'menggerutu, mencela',
+        paliVerse: 'ujjhāyati',
+        detailedIndonesia: 'v. menggerutu, mencela, mengkritik'
+    },
+    {
+        id: '149',
+        pali: 'uttama',
+        indonesia: 'tertinggi, terbaik',
+        paliVerse: 'uttama',
+        detailedIndonesia: 'a. tertinggi, terbaik, unggul'
+    },
+    {
+        id: '150',
+        pali: 'uttara',
+        indonesia: 'lebih tinggi, utara',
+        paliVerse: 'uttara',
+        detailedIndonesia: 'a. lebih tinggi, lebih baik; m. utara'
+    },
+    {
+        id: '151',
+        pali: 'udaka',
+        indonesia: 'air',
+        paliVerse: 'udaka',
+        detailedIndonesia: 'nt. air, cairan'
+    },
+    {
+        id: '152',
+        pali: 'udāna',
+        indonesia: 'seruan, ungkapan spontan',
+        paliVerse: 'udāna',
+        detailedIndonesia: 'nt. seruan, ungkapan spontan penuh makna'
+    },
+    {
+        id: '153',
+        pali: 'udāhārati',
+        indonesia: 'mengungkapkan, menyatakan',
+        paliVerse: 'udāhārati',
+        detailedIndonesia: 'v. menyatakan, mengungkapkan, menyebutkan'
+    },
+    {
+        id: '154',
+        pali: 'upacāra',
+        indonesia: 'pendekatan, cara, perilaku',
+        paliVerse: 'upacāra',
+        detailedIndonesia: 'm. pendekatan, cara, perilaku, penggunaan'
+    },
+    {
+        id: '155',
+        pali: 'upanissaya',
+        indonesia: 'dukungan, ketergantungan',
+        paliVerse: 'upanissaya',
+        detailedIndonesia: 'm. dukungan, ketergantungan, kondisi yang mempengaruhi'
+    },
+    {
+        id: '156',
+        pali: 'upapatti',
+        indonesia: 'kelahiran kembali, kemunculan',
+        paliVerse: 'upapatti',
+        detailedIndonesia: 'f. kelahiran kembali, kemunculan, kemunculan spontan'
+    },
+    {
+        id: '157',
+        pali: 'upasama',
+        indonesia: 'ketenangan, kedamaian',
+        paliVerse: 'upasama',
+        detailedIndonesia: 'm. ketenangan, kedamaian, lenyapnya gangguan'
+    },
+    {
+        id: '158',
+        pali: 'upāsaka',
+        indonesia: 'umat awam pria',
+        paliVerse: 'upāsaka',
+        detailedIndonesia: 'm. umat awam pria yang berbakti pada Buddha, Dhamma, dan Sangha'
+    },
+    {
+        id: '159',
+        pali: 'upāsikā',
+        indonesia: 'umat awam wanita',
+        paliVerse: 'upāsikā',
+        detailedIndonesia: 'f. umat awam wanita yang berbakti pada Buddha, Dhamma, dan Sangha'
+    },
+    {
+        id: '160',
+        pali: 'ussāha',
+        indonesia: 'usaha, semangat',
+        paliVerse: 'ussāha',
+        detailedIndonesia: 'm. usaha, semangat, daya upaya'
+    },
+    {
+        id: '161',
+        pali: 'ekagga',
+        indonesia: 'pikiran terpusat, terkonsentrasi',
+        paliVerse: 'ekagga',
+        detailedIndonesia: 'a. pikiran terpusat, terkonsentrasi'
+    },
+    {
+        id: '162',
+        pali: 'ekanta',
+        indonesia: 'mutlak, pasti, absolut',
+        paliVerse: 'ekanta',
+        detailedIndonesia: 'a. mutlak, pasti, absolut, tidak dapat dibantah'
+    },
+    {
+        id: '163',
+        pali: 'ekāyana',
+        indonesia: 'jalan tunggal, satu arah',
+        paliVerse: 'ekāyana',
+        detailedIndonesia: 'm. jalan tunggal, satu arah'
+    },
+    {
+        id: '164',
+        pali: 'evaṃ',
+        indonesia: 'demikian, begini, seperti ini',
+        paliVerse: 'evaṃ',
+        detailedIndonesia: 'adv. demikian, begini, seperti ini'
+    },
+    {
+        id: '165',
+        pali: 'ogha',
+        indonesia: 'arus, gelombang, banjir',
+        paliVerse: 'ogha',
+        detailedIndonesia: 'm. arus, gelombang, banjir, pusaran'
+    },
+    {
+        id: '166',
+        pali: 'okāsa',
+        indonesia: 'ruang, tempat, kesempatan',
+        paliVerse: 'okāsa',
+        detailedIndonesia: 'm. ruang, tempat, kesempatan'
+    },
+    {
+        id: '167',
+        pali: 'kamma',
+        indonesia: 'perbuatan, karma',
+        paliVerse: 'kamma',
+        detailedIndonesia: 'nt. perbuatan, tindakan, karma'
+    },
+    {
+        id: '168',
+        pali: 'kattha',
+        indonesia: 'dimana?, di mana',
+        paliVerse: 'kattha',
+        detailedIndonesia: 'adv. di mana?, ke mana?'
+    },
+    {
+        id: '169',
+        pali: 'kaṭhina',
+        indonesia: 'upacara pemberian jubah',
+        paliVerse: 'kaṭhina',
+        detailedIndonesia: 'nt. upacara pemberian jubah kepada Sangha'
+    },
+    {
+        id: '170',
+        pali: 'khandha',
+        indonesia: 'lima kelompok agregat',
+        paliVerse: 'khandha',
+        detailedIndonesia: 'm. lima kelompok agregat (rupa, vedanā, saññā, saṅkhāra, viññāṇa)'
+    },
 
     // rest dulu
 ]
