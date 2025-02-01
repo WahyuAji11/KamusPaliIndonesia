@@ -1,5 +1,13 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { View, Text, FlatList, ImageBackground, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  ImageBackground,
+  TouchableOpacity,
+  BackHandler,
+  Keyboard
+} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import DetailScreen from './src/components/DetailScreen';
 import SearchBar from './src/components/SearchBar';
@@ -21,7 +29,43 @@ const App = () => {
   useEffect(() => {
     loadFavorites();
     loadHistory();
-  }, []);
+
+    const backAction = () => {
+      if(selectedWord) {
+        setSelectedWord(null);
+        return true;
+      }
+      if(searchTerm) {
+        setSearchTerm('');
+        setResults([]);
+        Keyboard.dismiss();
+        return true;
+      }
+      if(activeTab !== 'search') {
+        setActiveTab('search');
+        return true;
+      }
+      return false;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction
+    );
+
+    // Keyboard Handler
+    const keyboardDidHideListener = Keyboard.addListener(
+      'keyboardDidHide',
+      () => {
+        Keyboard.dismiss();
+      }
+    );
+
+    return () => {
+      backHandler.remove();
+      keyboardDidHideListener.remove();
+    };
+  }, [selectedWord, searchTerm, activeTab]);
 
   const loadFavorites = async () => {
     try {
@@ -61,7 +105,7 @@ const App = () => {
   }, []);
 
   const handleWordPress = useCallback(async (word) => {
-    // Add to search history
+    Keyboard.dismiss();
     const newHistory = [word, ...searchHistory.filter(item => item.id !== word.id)].slice(0, 20);
     setSearchHistory(newHistory);
     await AsyncStorage.setItem('searchHistory', JSON.stringify(newHistory));
@@ -79,7 +123,14 @@ const App = () => {
     if(favorites.some(fav => fav.id === word.id)) {
       newFavorites = favorites.filter(fav => fav.id !== word.id);
     } else {
-      newFavorites = [...favorites, word];
+      const wordToSave = {
+        id: word.id,
+        pali: word.pali,
+        indonesia: word.indonesia,
+        paliVerse: word.paliText || word.paliVerse,
+        detailedIndonesia: word.translation || word.detailedIndonesia
+      };
+      newFavorites = [...favorites, wordToSave];
     }
     setFavorites(newFavorites);
     await AsyncStorage.setItem('favorites', JSON.stringify(newFavorites));
@@ -88,6 +139,7 @@ const App = () => {
   const handleClear = () => {
     setSearchTerm('');
     setResults([]);
+    Keyboard.dismiss();
   };
 
   const clearHistory = async () => {
@@ -99,7 +151,10 @@ const App = () => {
     return (
       <DetailScreen
         word={selectedWord}
-        onClose={() => setSelectedWord(null)}
+        onClose={() => {
+          setSelectedWord(null);
+          Keyboard.dismiss();
+        }}
         isFavorite={favorites.some(fav => fav.id === selectedWord.id)}
         onToggleFavorite={() => toggleFavorite(selectedWord)}
       />
@@ -108,7 +163,7 @@ const App = () => {
 
   return (
     <ImageBackground
-      source={require('./assets/SAGIN.png')}
+      source={require('./assets/sangha.png')}
       style={styles.backgroundImage}
       resizeMode="center"
     >
