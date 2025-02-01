@@ -1189,6 +1189,307 @@ const dictionary = [
         paliVerse: 'khandha',
         detailedIndonesia: 'm. lima kelompok agregat (rupa, vedanā, saññā, saṅkhāra, viññāṇa)'
     },
+    {
+        id: '171',
+        pali: 'laṅghati',
+        indonesia: 'melanggar, melompat melewati, melangkahi; meremehkan, mengabaikan',
+        paliVerse: 'laṅghati',
+        detailedIndonesia: 'v. melanggar, melompat melewati, melangkahi; meremehkan, mengabaikan'
+    },
+    {
+        id: '172',
+        pali: 'lajjin',
+        indonesia: 'merasa malu, santun sederhana, segan, sungkan, cermat berhati-hati',
+        paliVerse: 'lajjin',
+        detailedIndonesia: 'a. merasa malu, santun sederhana, segan, sungkan, tidak madar (tidak berperasaan, tebal telinga), cermat berhati-hati'
+    },
+    {
+        id: '173',
+        pali: 'lañchana',
+        indonesia: 'cap, tanda, tera, stempel; tanda mata, cendera mata, lencana',
+        paliVerse: 'lañchana',
+        detailedIndonesia: 'nt. cap, tanda, tera, stempel; tanda mata, cendera mata, lencana'
+    },
+    {
+        id: '174',
+        pali: 'laṇḍika',
+        indonesia: 'kotoran, tahi',
+        paliVerse: 'laṇḍika',
+        detailedIndonesia: 'f. kotoran, tahi'
+    },
+    {
+        id: '175',
+        pali: 'latā',
+        indonesia: 'tumbuhan menjalar, sulur tanaman menjalar; sebutan untuk taṇhā; coreng, gores, kilasan',
+        paliVerse: 'latā',
+        detailedIndonesia: 'f. tumbuhan menjalar, sulur tanaman menjalar; sebutan untuk taṇhā; coreng, gores, kilasan'
+    },
+    {
+        id: '176',
+        pali: 'laddha',
+        indonesia: 'telah memperoleh, mengambil, menerima',
+        paliVerse: 'laddha',
+        detailedIndonesia: 'pp dari labhati: telah memperoleh, mengambil, menerima'
+    },
+    {
+        id: '177',
+        pali: 'lapati',
+        indonesia: 'berbicara, berujar, mengoceh, bergumam',
+        paliVerse: 'lapati',
+        detailedIndonesia: 'v. berbicara, berujar, mengoceh, bergumam'
+    },
+    {
+        id: '178',
+        pali: 'lapita',
+        indonesia: 'dibicarakan, diutarakan, diujar, berceloteh, bergumam',
+        paliVerse: 'lapita',
+        detailedIndonesia: 'pp dari lapati: dibicarakan, diutarakan, diujar, berceloteh, bergumam'
+    },
+    {
+        id: '179',
+        pali: 'labuja',
+        indonesia: 'sukun (Artocarpus lacucha atau incisa)',
+        paliVerse: 'labuja',
+        detailedIndonesia: 'm. sukun (PED: Artocarpus lacucha atau incisa; KBBI: Artocarpus incissus)'
+    },
+    {
+        id: '180',
+        pali: 'labbhati',
+        indonesia: 'diperbolehkan, mungkin, bisa jadi, pantas, didapati',
+        paliVerse: 'labbhati',
+        detailedIndonesia: 'pass dari labhati: diperbolehkan, mungkin, bisa jadi, pantas, didapati'
+    },
+    {
+        id: '181',
+        pali: 'labha',
+        indonesia: 'menerima, diterima, mendapat',
+        paliVerse: 'labha',
+        detailedIndonesia: 'a. menerima, diterima, mendapat'
+    },
+    {
+        id: '182',
+        pali: 'labhati',
+        indonesia: 'mendapat, menerima, memperoleh, meraih; mendapat izin; mendapat kesempatan, diizinkan mendapat',
+        paliVerse: 'labhati',
+        detailedIndonesia: 'v. mendapat, menerima, memperoleh, meraih; mendapat izin; mendapat kesempatan, diizinkan mendapat'
+    },
+    {
+        id: '183',
+        pali: 'labbhā',
+        indonesia: 'mungkin, bisa saja',
+        paliVerse: 'labbhā',
+        detailedIndonesia: 'adv. mungkin, bisa saja'
+    },
+    {
+        id: '184',
+        pali: 'lambin',
+        indonesia: 'menggelantung, menjulur; beralat kelamin panjang menjulur',
+        paliVerse: 'lambin',
+        detailedIndonesia: 'a. menggelantung, menjulur; beralat kelamin panjang menjulur'
+    },
+    {
+        id: '185',
+        pali: 'laya',
+        indonesia: 'jangka waktu yang singkat, sejenak, sebentar, sejurus, sekejap, sesaat; jangka waktu dalam musik, irama, ritme',
+        paliVerse: 'laya',
+        detailedIndonesia: 'm. jangka waktu yang singkat, sejenak, sebentar, sejurus, sekejap, sesaat; jangka waktu dalam musik, waktu yang sama, irama, ritme'
+    },
+    {
+        id: '186',
+        pali: 'lasati',
+        indonesia: 'mendambakan, menginginkan; menari, memerankan, berpentas, berakting; berolahraga, memancarkan, menyuarakan',
+        paliVerse: 'lasati',
+        detailedIndonesia: 'v. mendambakan, menginginkan; menari, memerankan, berpentas, berakting; berolahraga, memancarkan, menyuarakan'
+    },
+    {
+        id: '187',
+        pali: 'lahuka',
+        indonesia: 'ringan, enteng, remeh, sepele',
+        paliVerse: 'lahuka',
+        detailedIndonesia: 'a. ringan, enteng, remeh, sepele'
+    },
+    {
+        id: '188',
+        pali: 'lākhā',
+        indonesia: 'lak, pewarna lak',
+        paliVerse: 'lākhā',
+        detailedIndonesia: 'f. lak, pewarna lak'
+    },
+    {
+        id: '189',
+        pali: 'lābha',
+        indonesia: 'pendapatan, laba, perolehan, milik, kebaikan, keuntungan, kemaslahatan',
+        paliVerse: 'lābha',
+        detailedIndonesia: 'm. pendapatan, laba, perolehan, milik, kebaikan, keuntungan, kemaslahatan'
+    },
+    {
+        id: '190',
+        pali: 'lābhagga',
+        indonesia: 'perolehan tertinggi; banyak perolehan materi',
+        paliVerse: 'lābhagga',
+        detailedIndonesia: 'a. perolehan tertinggi; banyak perolehan materi'
+    },
+    {
+        id: '191',
+        pali: 'lābhin',
+        indonesia: 'menerima, mendapatkan, meraih, memiliki',
+        paliVerse: 'lābhin',
+        detailedIndonesia: 'a. menerima, mendapatkan, meraih, memiliki'
+    },
+    {
+        id: '192',
+        pali: 'lāmaka',
+        indonesia: 'remeh, jelek, buruk, jahat, inferior',
+        paliVerse: 'lāmaka',
+        detailedIndonesia: 'a. remeh, jelek, buruk, jahat, inferior'
+    },
+    {
+        id: '193',
+        pali: 'lāyati',
+        indonesia: 'memotong, menyiangi, menuai',
+        paliVerse: 'lāyati',
+        detailedIndonesia: 'v. memotong, menyiangi, menuai'
+    },
+    {
+        id: '194',
+        pali: 'likhati',
+        indonesia: 'menggores, memotong, mengukir, menulis, memoles, melicinkan',
+        paliVerse: 'likhati',
+        detailedIndonesia: 'v. menggores, memotong, mengukir, menulis, memoles, melicinkan'
+    },
+    {
+        id: '195',
+        pali: 'likhita',
+        indonesia: 'tergores, terpotong, diukir, dipoles; ditulis, dilicinkan, ditandai',
+        paliVerse: 'likhita',
+        detailedIndonesia: 'pp dari likhati: tergores, terpotong, diukir, dipoles; ditulis, dilicinkan, ditandai'
+    },
+    {
+        id: '196',
+        pali: 'liṅga',
+        indonesia: 'sifat, tanda, ciri; penanda seksual, jenis kelamin; alat kelamin; penampakan, penampilan',
+        paliVerse: 'liṅga',
+        detailedIndonesia: 'nt. sifat, tanda, ciri; penanda seksual, jenis kelamin; alat kelamin; penampakan, penampilan'
+    },
+    {
+        id: '197',
+        pali: 'līna',
+        indonesia: 'melekat, menempel, lamban, lembam, melempem, pemalu, pendiam, suka menyendiri, menutup diri, senyap',
+        paliVerse: 'līna',
+        detailedIndonesia: 'pp dari līyati: melekat, menempel, lamban, lembam, melempem, pemalu, pendiam, suka menyendiri, menutup diri, senyap'
+    },
+    {
+        id: '198',
+        pali: 'līyati',
+        indonesia: 'menempel, melekat; melumer, luput dari, terlepas',
+        paliVerse: 'līyati',
+        detailedIndonesia: 'v. menempel, melekat; melumer, luput dari, terlepas'
+    },
+    {
+        id: '199',
+        pali: 'luta',
+        indonesia: 'terpotong',
+        paliVerse: 'luta',
+        detailedIndonesia: 'a. terpotong'
+    },
+    {
+        id: '200',
+        pali: 'luddaka',
+        indonesia: 'pemburu',
+        paliVerse: 'luddaka',
+        detailedIndonesia: 'm. pemburu'
+    },
+    {
+        id: '201',
+        pali: 'luddha',
+        indonesia: 'keserakahan, ketamakan, lobha; kekejaman, kekerasan',
+        paliVerse: 'luddha',
+        detailedIndonesia: 'pp dari lubbhati: keserakahan, ketamakan, lobha; kekejaman, kekerasan'
+    },
+    {
+        id: '202',
+        pali: 'lubbhati',
+        indonesia: 'bersifat serakah, tamak, loba; mendamba-dambakan, menginginkan',
+        paliVerse: 'lubbhati',
+        detailedIndonesia: 'v. bersifat serakah, tamak, loba; mendamba-dambakan, menginginkan'
+    },
+    {
+        id: '203',
+        pali: 'lūkha',
+        indonesia: 'kasar, kasap, kesat; tak menyenangkan; jelek, buruk; cukupan, serba sedikit; (orang) nista, buruk sekali, kasar, menyedihkan, menjijikkan, lusuh, jembel, rusak, jorok, berpenampilan jembel berdisiplin keras',
+        paliVerse: 'lūkha',
+        detailedIndonesia: 'a. kasar, kasap, kesat; tak menyenangkan; jelek, buruk; cukupan, serba sedikit; (orang) nista, buruk sekali, kasar, menyedihkan, menjijikkan, lusuh, jembel, rusak, jorok, berpenampilan jembel berdisiplin keras'
+    },
+    {
+        id: '204',
+        pali: 'lekha',
+        indonesia: 'tulisan, huruf, surat',
+        paliVerse: 'lekha',
+        detailedIndonesia: 'm. tulisan, huruf, surat'
+    },
+    {
+        id: '205',
+        pali: 'leḍḍu',
+        indonesia: 'sebongkah tanah',
+        paliVerse: 'leḍḍu',
+        detailedIndonesia: 'm. sebongkah tanah; ~pāta sepelemparan bongkahan tanah'
+    },
+    {
+        id: '206',
+        pali: 'leṇa',
+        indonesia: 'gua, ruang gua; penaungan, perteduhan, keselamatan',
+        paliVerse: 'leṇa',
+        detailedIndonesia: 'nt. gua, ruang gua; penaungan, perteduhan, keselamatan'
+    },
+    {
+        id: '207',
+        pali: 'lepa',
+        indonesia: 'pengolesan, pelumuran, penurapan (tembok), pelepaan; turap, lepa; hal melengket, melekat',
+        paliVerse: 'lepa',
+        detailedIndonesia: 'm. pengolesan, pelumuran, penurapan (tembok), pelepaan; turap, lepa; hal melengket, melekat'
+    },
+    {
+        id: '208',
+        pali: 'lesa',
+        indonesia: 'pura-pura, dalih, helat, kilah, akal, muslihat',
+        paliVerse: 'lesa',
+        detailedIndonesia: 'm. pura-pura, dalih, helat, kilah, akal, muslihat'
+    },
+    {
+        id: '209',
+        pali: 'loka',
+        indonesia: 'dunia, penghuni dunia',
+        paliVerse: 'loka',
+        detailedIndonesia: 'm. dunia, penghuni dunia'
+    },
+    {
+        id: '210',
+        pali: 'loṇa',
+        indonesia: 'garam',
+        paliVerse: 'loṇa',
+        detailedIndonesia: 'nt. garam; a. asin; ~sovīraka nt. bubur asam yang diberi garam'
+    },
+    {
+        id: '211',
+        pali: 'lobha',
+        indonesia: 'keserakahan, kerakusan, loba',
+        paliVerse: 'lobha',
+        detailedIndonesia: 'm. keserakahan, kerakusan, loba'
+    },
+    {
+        id: '212',
+        pali: 'loma',
+        indonesia: 'bulu badan',
+        paliVerse: 'loma',
+        detailedIndonesia: 'nt. bulu badan; lomaṃ pāteti tunduk; ~haṃsa m. menggidikkan bulu roma; meremang, merinding, menyeramkan'
+    },
+    {
+        id: '213',
+        pali: 'lomasa',
+        indonesia: 'berbulu (halus), ditutupi dengan bulu (halus), lembut',
+        paliVerse: 'lomasa',
+        detailedIndonesia: 'a. berbulu (halus), ditutupi dengan bulu (halus), lembut'
+    }
 
     // rest dulu
 ]
