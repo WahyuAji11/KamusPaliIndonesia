@@ -6,7 +6,10 @@ import {
   ImageBackground,
   TouchableOpacity,
   BackHandler,
-  Keyboard
+  Keyboard,
+  SafeAreaView,
+  Platform,
+  StatusBar
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import DetailScreen from './src/components/DetailScreen';
@@ -29,6 +32,11 @@ const App = () => {
   useEffect(() => {
     loadFavorites();
     loadHistory();
+    StatusBar.setBarStyle('dark-content');
+    if(Platform.OS === 'android') {
+      StatusBar.setBackgroundColor('transparent');
+      StatusBar.setTranslucent(true);
+    }
 
     const backAction = () => {
       if(selectedWord) {
@@ -53,7 +61,6 @@ const App = () => {
       backAction
     );
 
-    // Keyboard Handler
     const keyboardDidHideListener = Keyboard.addListener(
       'keyboardDidHide',
       () => {
@@ -162,60 +169,68 @@ const App = () => {
   }
 
   return (
-    <ImageBackground
-      source={require('./assets/sangha.png')}
-      style={styles.backgroundImage}
-      resizeMode="center"
-    >
-      <View style={styles.container}>
-        <Text style={styles.title}>Kamus Pali - Indonesia</Text>
-        <SearchBar
-          value={searchTerm}
-          onChangeText={handleSearch}
-          onClear={handleClear}
-        />
+    <SafeAreaView style={styles.safeArea}>
+      <ImageBackground
+        source={require('./assets/sangha.png')}
+        style={styles.backgroundImage}
+        resizeMode="center"
+      >
+        <View style={styles.container}>
+          <View style={styles.headerContainer}>
+            <Text style={styles.title}>Kamus Pali - Indonesia</Text>
+            <Text style={styles.subtitle}>Pencarian kata dalam Bahasa Pali</Text>
+          </View>
 
-        <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
+          <View style={styles.contentContainer}>
+            <SearchBar
+              value={searchTerm}
+              onChangeText={handleSearch}
+              onClear={handleClear}
+            />
 
-        {activeTab === 'search' && (
-          <FlatList
-            data={results}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
-              <WordListItem
-                item={item}
-                onPress={handleWordPress}
-                isFavorite={favorites.some(fav => fav.id === item.id)}
-                onToggleFavorite={() => toggleFavorite(item)}
+            <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
+
+            {activeTab === 'search' && (
+              <FlatList
+                data={results}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => (
+                  <WordListItem
+                    item={item}
+                    onPress={handleWordPress}
+                    isFavorite={favorites.some(fav => fav.id === item.id)}
+                    onToggleFavorite={() => toggleFavorite(item)}
+                  />
+                )}
+                ListEmptyComponent={
+                  searchTerm ? (
+                    <Text style={styles.noResults}>Tidak ada hasil ditemukan</Text>
+                  ) : (
+                    <Text style={styles.hint}>Ketik kata dalam bahasa Pali atau Indonesia</Text>
+                  )
+                }
               />
             )}
-            ListEmptyComponent={
-              searchTerm ? (
-                <Text style={styles.noResults}>Tidak ada hasil ditemukan</Text>
-              ) : (
-                <Text style={styles.hint}>Ketik kata dalam bahasa Pali atau Indonesia</Text>
-              )
-            }
-          />
-        )}
 
-        {activeTab === 'history' && (
-          <History
-            history={searchHistory}
-            onWordPress={handleWordPress}
-            onClear={clearHistory}
-          />
-        )}
+            {activeTab === 'history' && (
+              <History
+                history={searchHistory}
+                onWordPress={handleWordPress}
+                onClear={clearHistory}
+              />
+            )}
 
-        {activeTab === 'favorites' && (
-          <Favorites
-            favorites={favorites}
-            onWordPress={handleWordPress}
-            onToggleFavorite={toggleFavorite}
-          />
-        )}
-      </View>
-    </ImageBackground>
+            {activeTab === 'favorites' && (
+              <Favorites
+                favorites={favorites}
+                onWordPress={handleWordPress}
+                onToggleFavorite={toggleFavorite}
+              />
+            )}
+          </View>
+        </View>
+      </ImageBackground>
+    </SafeAreaView>
   );
 };
 
