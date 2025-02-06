@@ -21,73 +21,6 @@ import TabBar from './src/components/TabBar';
 import dictionary from './src/data/dictionary';
 import { styles } from './src/styles/AppStyles';
 
-const savedataToStorage = async (data) => {
-  try {
-    await AsyncStorage.setItem('dictionaryData', JSON.stringify(data));
-  } catch (error) {
-    console.error('Error saving data to AsyncStorage:', error);
-  }
-};
-
-const loadDataFromStorage = async () => {
-  try {
-    const storedData = await AsyncStorage.getItem('dictionaryData');
-    if (storedData) {
-      return JSON.parse(storedData); // Mengonversi kembali data ke dalam format array atau objek
-    }
-    return []; // Jika data tidak ditemukan, return array kosong
-  } catch (error) {
-    console.error('Error loading data from AsyncStorage:', error);
-    return [];
-  }
-};
-
-const fetchData = async (setData) => {
-  try {
-    // Cek jika ada koneksi internet dan fetch dari API
-    const response = await fetch('https://api.example.com/dictionary');
-    const jsonData = await response.json();
-    
-    // Simpan data ke AsyncStorage agar tersedia offline
-    await savedataToStorage(jsonData);
-    setData(jsonData);
-  } catch (error) {
-    console.log('Fetch gagal, coba ambil data dari AsyncStorage');
-    
-    // Jika gagal, coba ambil data dari AsyncStorage
-    const offlineData = await loadDataFromStorage();
-    setData(offlineData);
-  }
-};
-
-const DisplayData = ({ data }) => (
-  <FlatList
-    data={data}
-    keyExtractor={(item) => item.id.toString()}
-    renderItem={({ item }) => (
-      <View>
-        <Text>{item.pali} - {item.indonesia}</Text>
-      </View>
-    )}
-  />
-);
-
-// const App = () => {
-//   const [data, setData] = useState([]);
-
-//   useEffect(() => {
-//     fetchData(setData);  // Mengambil data saat komponen pertama kali dimuat
-//   }, []);
-
-//   return (
-//     <View>
-//       <Text>Dictionary Data:</Text>
-//       <DisplayData data={data} />
-//     </View>
-//   );
-// };
-
-
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState([]);
@@ -95,31 +28,28 @@ const App = () => {
   const [searchHistory, setSearchHistory] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [activeTab, setActiveTab] = useState('search');
-  
-
-
 
   useEffect(() => {
     loadFavorites();
     loadHistory();
     StatusBar.setBarStyle('dark-content');
-    if (Platform.OS === 'android') {
+    if(Platform.OS === 'android') {
       StatusBar.setBackgroundColor('transparent');
       StatusBar.setTranslucent(true);
     }
 
     const backAction = () => {
-      if (selectedWord) {
+      if(selectedWord) {
         setSelectedWord(null);
         return true;
       }
-      if (searchTerm) {
+      if(searchTerm) {
         setSearchTerm('');
         setResults([]);
         Keyboard.dismiss();
         return true;
       }
-      if (activeTab !== 'search') {
+      if(activeTab !== 'search') {
         setActiveTab('search');
         return true;
       }
@@ -147,10 +77,10 @@ const App = () => {
   const loadFavorites = async () => {
     try {
       const storedFavorites = await AsyncStorage.getItem('favorites');
-      if (storedFavorites) {
+      if(storedFavorites) {
         setFavorites(JSON.parse(storedFavorites));
       }
-    } catch (error) {
+    } catch(error) {
       console.error('Error loading favorites:', error);
     }
   };
@@ -158,10 +88,10 @@ const App = () => {
   const loadHistory = async () => {
     try {
       const storedHistory = await AsyncStorage.getItem('searchHistory');
-      if (storedHistory) {
+      if(storedHistory) {
         setSearchHistory(JSON.parse(storedHistory));
       }
-    } catch (error) {
+    } catch(error) {
       console.error('Error loading history:', error);
     }
   };
@@ -170,7 +100,7 @@ const App = () => {
     setSearchTerm(text);
     const trimmedText = text.trim().toLowerCase();
 
-    if (trimmedText === '') {
+    if(trimmedText === '') {
       setResults([]);
     } else {
       const filteredResults = dictionary.filter((entry) =>
@@ -197,7 +127,7 @@ const App = () => {
 
   const toggleFavorite = async (word) => {
     let newFavorites;
-    if (favorites.some(fav => fav.id === word.id)) {
+    if(favorites.some(fav => fav.id === word.id)) {
       newFavorites = favorites.filter(fav => fav.id !== word.id);
     } else {
       const wordToSave = {
@@ -224,7 +154,7 @@ const App = () => {
     await AsyncStorage.removeItem('searchHistory');
   };
 
-  if (selectedWord) {
+  if(selectedWord) {
     return (
       <DetailScreen
         word={selectedWord}

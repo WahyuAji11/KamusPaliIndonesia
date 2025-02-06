@@ -1,62 +1,59 @@
-import React from 'react';
+import React, { memo, useCallback } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { theme } from '../styles/AppStyles';
 
-const TabBar = ({ activeTab, onTabChange }) => (
-    <View style={styles.tabContainer}>
-        <TouchableOpacity
-            style={[styles.tab, activeTab === 'search' && styles.activeTab]}
-            onPress={() => onTabChange('search')}
-        >
-            <Icon
-                name="search"
-                size={20}
-                color={activeTab === 'search' ? theme.primary : theme.textLight}
-            />
-            <Text style={[
-                styles.tabText,
-                activeTab === 'search' && styles.activeTabText
-            ]}>
-                Cari
-            </Text>
-        </TouchableOpacity>
+const TabBar = ({ activeTab, onTabChange }) => {
+    const handleSearchPress = useCallback(() => onTabChange('search'), [onTabChange]);
+    const handleHistoryPress = useCallback(() => onTabChange('history'), [onTabChange]);
+    const handleFavoritesPress = useCallback(() => onTabChange('favorites'), [onTabChange]);
+    // const HandleSettingsPress = useCallback(() => onTabChange('Settings'), [onTabChange]);
 
-        <TouchableOpacity
-            style={[styles.tab, activeTab === 'history' && styles.activeTab]}
-            onPress={() => onTabChange('history')}
-        >
-            <Icon
-                name="history"
-                size={20}
-                color={activeTab === 'history' ? theme.primary : theme.textLight}
+    return (
+        <View style={styles.tabContainer}>
+            <TabItem
+                isActive={activeTab === 'search'}
+                onPress={handleSearchPress}
+                icon="search"
+                label="Cari"
             />
-            <Text style={[
-                styles.tabText,
-                activeTab === 'history' && styles.activeTabText
-            ]}>
-                Riwayat
-            </Text>
-        </TouchableOpacity>
+            <TabItem
+                isActive={activeTab === 'history'}
+                onPress={handleHistoryPress}
+                icon="history"
+                label="Riwayat"
+            />
+            <TabItem
+                isActive={activeTab === 'favorites'}
+                onPress={handleFavoritesPress}
+                icon="star"
+                label="Favorit"
+            />
+            {/* <TabItem
+                isActive={activeTab === 'Settings'}
+                onPress={HandleSettingsPress}
+                icon="cog"
+                label="Settings"
+            /> */}
+        </View>
+    );
+};
 
-        <TouchableOpacity
-            style={[styles.tab, activeTab === 'favorites' && styles.activeTab]}
-            onPress={() => onTabChange('favorites')}
-        >
-            <Icon
-                name="star"
-                size={20}
-                color={activeTab === 'favorites' ? theme.primary : theme.textLight}
-            />
-            <Text style={[
-                styles.tabText,
-                activeTab === 'favorites' && styles.activeTabText
-            ]}>
-                Favorit
-            </Text>
-        </TouchableOpacity>
-    </View>
-);
+const TabItem = memo(({ isActive, onPress, icon, label }) => (
+    <TouchableOpacity
+        style={[styles.tab, isActive && styles.activeTab]}
+        onPress={onPress}
+    >
+        <Icon
+            name={icon}
+            size={20}
+            color={isActive ? theme.primary : theme.textLight}
+        />
+        <Text style={[styles.tabText, isActive && styles.activeTabText]}>
+            {label}
+        </Text>
+    </TouchableOpacity>
+));
 
 const styles = StyleSheet.create({
     tabContainer: {
@@ -67,10 +64,7 @@ const styles = StyleSheet.create({
         padding: 4,
         elevation: 1,
         shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 1,
-        },
+        shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.1,
         shadowRadius: 2,
     },
