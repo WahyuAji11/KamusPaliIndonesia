@@ -1,5 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { theme } from '../styles/AppStyles';
 
@@ -7,7 +7,7 @@ const TabBar = ({ activeTab, onTabChange }) => {
     const handleSearchPress = useCallback(() => onTabChange('search'), [onTabChange]);
     const handleHistoryPress = useCallback(() => onTabChange('history'), [onTabChange]);
     const handleFavoritesPress = useCallback(() => onTabChange('favorites'), [onTabChange]);
-    // const HandleSettingsPress = useCallback(() => onTabChange('Settings'), [onTabChange]);
+    const handleSettingsPress = useCallback(() => onTabChange('settings'), [onTabChange]);
 
     return (
         <View style={styles.tabContainer}>
@@ -29,12 +29,12 @@ const TabBar = ({ activeTab, onTabChange }) => {
                 icon="star"
                 label="Favorit"
             />
-            {/* <TabItem
-                isActive={activeTab === 'Settings'}
-                onPress={HandleSettingsPress}
+            <TabItem
+                isActive={activeTab === 'settings'}
+                onPress={handleSettingsPress}
                 icon="cog"
                 label="Settings"
-            /> */}
+            />
         </View>
     );
 };

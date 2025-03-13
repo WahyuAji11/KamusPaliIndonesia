@@ -1,44 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { View, Switch, Text, StyleSheet, useColorScheme } from 'react-native';
+import React from 'react';
+import { StyleSheet, Switch, Text, useColorScheme, View } from 'react-native';
 import { Appbar, useTheme } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-const Settings = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-    const colorScheme = useColorScheme(); // Mendeteksi mode sistem (dark/light)
-    const theme = useTheme(); // Menggunakan tema dari react-native-paper
-
-    // Setel mode dark/light sesuai preferensi sistem saat pertama kali membuka halaman
-    useEffect(() => {
-        setIsDarkMode(colorScheme === 'dark');
-    }, [colorScheme]);
-
-    // Fungsi untuk mengubah mode dark/light
-    const toggleDarkMode = async () => {
-      setIsDarkMode((prev) => !prev);
-      storage.setItem('isDarkMode', !isDarkMode);
-      const savedMode = await storage.getItem('isDarkMode');
-      if (savedMode!== null) setIsDarkMode(JSON.parse(savedMode));
-      // Update mode di storage (disini hanya sebagai contoh)
-      // Ambil data yang tersimpan di storage (disini hanya sebagai contoh)
-    };
+const Settings = ({ isDarkMode, toggleDarkMode }) => {
+    const colorScheme = useColorScheme(); // Detect system dark/light mode
+    const theme = useTheme(); // Use theme from react-native-paper
 
     return (
-        <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
-            {/* Header */}
+        <View style={[styles.container, { backgroundColor: theme.colors.background }]}>            
             <Appbar.Header>
                 <Appbar.BackAction onPress={() => {}} />
                 <Appbar.Content title="Settings" />
             </Appbar.Header>
-
-            {/* Konten Settings */}
+            
             <View style={styles.content}>
-                {/* Toggle Dark/Light Mode */}
                 <View style={styles.settingItem}>
-                    <Icon name="moon" size={24} color={theme.colors.text} />
-                    <Text style={[styles.settingText, { color: theme.colors.text }]}>
-                        Mode Gelap
-                    </Text>
+                    <FontAwesome5 name="moon" size={24} color={theme.colors.text} solid />
+                    <Text style={[styles.settingText, { color: theme.colors.text }]}>Dark Mode</Text>
                     <Switch
                         value={isDarkMode}
                         onValueChange={toggleDarkMode}
@@ -46,11 +25,7 @@ const Settings = () => {
                         trackColor={{ false: theme.colors.disabled, true: theme.colors.primary }}
                     />
                 </View>
-
-                {/* Informasi Tambahan */}
-                <Text style={[styles.infoText, { color: theme.colors.text }]}>
-                    Mode gelap akan menyesuaikan dengan preferensi sistem Anda.
-                </Text>
+                <Text style={[styles.infoText, { color: theme.colors.text }]}>Dark mode will follow your system preference.</Text>
             </View>
         </View>
     );

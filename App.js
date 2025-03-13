@@ -1,92 +1,26 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
-  View,
-  Text,
+  BackHandler,
   FlatList,
   ImageBackground,
-  TouchableOpacity,
-  BackHandler,
   Keyboard,
-  SafeAreaView,
   Platform,
-  StatusBar
+  SafeAreaView,
+  StatusBar,
+  Text,
+  View
 } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import DetailScreen from './src/components/DetailScreen';
-import SearchBar from './src/components/SearchBar';
-import WordListItem from './src/components/WordListItem';
-import History from './src/components/History';
 import Favorites from './src/components/Favorites';
+import History from './src/components/History';
+import SearchBar from './src/components/SearchBar';
+import Settings from './src/components/Settings';
 import TabBar from './src/components/TabBar';
+import WordListItem from './src/components/WordListItem';
 import dictionary from './src/data/dictionary';
 import { styles } from './src/styles/AppStyles';
-
-const savedataToStorage = async (data) => {
-  try {
-    await AsyncStorage.setItem('dictionaryData', JSON.stringify(data));
-  } catch (error) {
-    console.error('Error saving data to AsyncStorage:', error);
-  }
-};
-
-const loadDataFromStorage = async () => {
-  try {
-    const storedData = await AsyncStorage.getItem('dictionaryData');
-    if (storedData) {
-      return JSON.parse(storedData); // Mengonversi kembali data ke dalam format array atau objek
-    }
-    return []; // Jika data tidak ditemukan, return array kosong
-  } catch (error) {
-    console.error('Error loading data from AsyncStorage:', error);
-    return [];
-  }
-};
-
-const fetchData = async (setData) => {
-  try {
-    // Cek jika ada koneksi internet dan fetch dari API
-    const response = await fetch('https://api.example.com/dictionary');
-    const jsonData = await response.json();
-    
-    // Simpan data ke AsyncStorage agar tersedia offline
-    await savedataToStorage(jsonData);
-    setData(jsonData);
-  } catch (error) {
-    console.log('Fetch gagal, coba ambil data dari AsyncStorage');
-    
-    // Jika gagal, coba ambil data dari AsyncStorage
-    const offlineData = await loadDataFromStorage();
-    setData(offlineData);
-  }
-};
-
-const DisplayData = ({ data }) => (
-  <FlatList
-    data={data}
-    keyExtractor={(item) => item.id.toString()}
-    renderItem={({ item }) => (
-      <View>
-        <Text>{item.pali} - {item.indonesia}</Text>
-      </View>
-    )}
-  />
-);
-
-// const App = () => {
-//   const [data, setData] = useState([]);
-
-//   useEffect(() => {
-//     fetchData(setData);  // Mengambil data saat komponen pertama kali dimuat
-//   }, []);
-
-//   return (
-//     <View>
-//       <Text>Dictionary Data:</Text>
-//       <DisplayData data={data} />
-//     </View>
-//   );
-// };
-
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -95,14 +29,13 @@ const App = () => {
   const [searchHistory, setSearchHistory] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [activeTab, setActiveTab] = useState('search');
-  
-
-
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     loadFavorites();
     loadHistory();
-    StatusBar.setBarStyle('dark-content');
+    loadDarkMode();
+    StatusBar.setBarStyle(isDarkMode ? 'light-content' : 'dark-content');
     if (Platform.OS === 'android') {
       StatusBar.setBackgroundColor('transparent');
       StatusBar.setTranslucent(true);
@@ -142,7 +75,7 @@ const App = () => {
       backHandler.remove();
       keyboardDidHideListener.remove();
     };
-  }, [selectedWord, searchTerm, activeTab]);
+  }, [selectedWord, searchTerm, activeTab, isDarkMode]);
 
   const loadFavorites = async () => {
     try {
@@ -163,6 +96,17 @@ const App = () => {
       }
     } catch (error) {
       console.error('Error loading history:', error);
+    }
+  };
+
+  const loadDarkMode = async () => {
+    try {
+      const storedDarkMode = await AsyncStorage.getItem('isDarkMode');
+      if (storedDarkMode !== null) {
+        setIsDarkMode(JSON.parse(storedDarkMode));
+      }
+    } catch (error) {
+      console.error('Error loading dark mode:', error);
     }
   };
 
@@ -224,6 +168,11 @@ const App = () => {
     await AsyncStorage.removeItem('searchHistory');
   };
 
+  const toggleDarkMode = async () => {
+    setIsDarkMode((prev) => !prev);
+    await AsyncStorage.setItem('isDarkMode', JSON.stringify(!isDarkMode));
+  };
+
   if (selectedWord) {
     return (
       <DetailScreen
@@ -239,68 +188,77 @@ const App = () => {
   }
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <ImageBackground
-        source={require('./assets/sangha.png')}
-        style={styles.backgroundImage}
-        resizeMode="center"
-      >
-        <View style={styles.container}>
-          <View style={styles.headerContainer}>
-            <Text style={styles.title}>Kamus Pali - Indonesia</Text>
-            <Text style={styles.subtitle}>Pencarian kata dalam Bahasa Pali</Text>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.safeArea}>
+        <ImageBackground
+          source={require('./assets/sangha.png')}
+          style={styles.backgroundImage}
+          resizeMode="center"
+        >
+          <View style={styles.container}>
+            <View style={styles.headerContainer}>
+              <Text style={styles.title}>Kamus Pali - Indonesia</Text>
+              <Text style={styles.subtitle}>Pencarian kata dalam Bahasa Pali</Text>
+            </View>
+
+            <View style={styles.contentContainer}>
+              <SearchBar
+                value={searchTerm}
+                onChangeText={handleSearch}
+                onClear={handleClear}
+              />
+
+              <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
+
+              {activeTab === 'search' && (
+                <FlatList
+                  data={results}
+                  keyExtractor={(item) => item.id}
+                  renderItem={({ item }) => (
+                    <WordListItem
+                      item={item}
+                      onPress={handleWordPress}
+                      isFavorite={favorites.some(fav => fav.id === item.id)}
+                      onToggleFavorite={() => toggleFavorite(item)}
+                    />
+                  )}
+                  ListEmptyComponent={
+                    searchTerm ? (
+                      <Text style={styles.noResults}>Tidak ada hasil ditemukan</Text>
+                    ) : (
+                      <Text style={styles.hint}>Ketik kata dalam bahasa Pali atau Indonesia</Text>
+                    )
+                  }
+                />
+              )}
+
+              {activeTab === 'history' && (
+                <History
+                  history={searchHistory}
+                  onWordPress={handleWordPress}
+                  onClear={clearHistory}
+                />
+              )}
+
+              {activeTab === 'favorites' && (
+                <Favorites
+                  favorites={favorites}
+                  onWordPress={handleWordPress}
+                  onToggleFavorite={toggleFavorite}
+                />
+              )}
+
+              {activeTab === 'settings' && (
+                <Settings
+                  isDarkMode={isDarkMode}
+                  toggleDarkMode={toggleDarkMode}
+                />
+              )}
+            </View>
           </View>
-
-          <View style={styles.contentContainer}>
-            <SearchBar
-              value={searchTerm}
-              onChangeText={handleSearch}
-              onClear={handleClear}
-            />
-
-            <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
-
-            {activeTab === 'search' && (
-              <FlatList
-                data={results}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item }) => (
-                  <WordListItem
-                    item={item}
-                    onPress={handleWordPress}
-                    isFavorite={favorites.some(fav => fav.id === item.id)}
-                    onToggleFavorite={() => toggleFavorite(item)}
-                  />
-                )}
-                ListEmptyComponent={
-                  searchTerm ? (
-                    <Text style={styles.noResults}>Tidak ada hasil ditemukan</Text>
-                  ) : (
-                    <Text style={styles.hint}>Ketik kata dalam bahasa Pali atau Indonesia</Text>
-                  )
-                }
-              />
-            )}
-
-            {activeTab === 'history' && (
-              <History
-                history={searchHistory}
-                onWordPress={handleWordPress}
-                onClear={clearHistory}
-              />
-            )}
-
-            {activeTab === 'favorites' && (
-              <Favorites
-                favorites={favorites}
-                onWordPress={handleWordPress}
-                onToggleFavorite={toggleFavorite}
-              />
-            )}
-          </View>
-        </View>
-      </ImageBackground>
-    </SafeAreaView>
+        </ImageBackground>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 
