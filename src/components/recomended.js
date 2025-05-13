@@ -2,14 +2,21 @@ import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { theme } from '../styles/AppStyles';
+import { data } from '../data/dictionary'; // Adjust the import based on your project structure
 
-const WordListItem = ({ item, onPress, isFavorite, onToggleFavorite }) => (
+const Recommended = ({ item, onPress, isFavorite, onToggleFavorite }) => (
     <TouchableOpacity
         style={styles.container}
         onPress={() => onPress(item)}
         activeOpacity={0.7}
     >
         <View style={styles.card}>
+            {/* Recommendation badge */}
+            <View style={styles.recommendBadge}>
+                <Icon name="compass" size={12} color="#FFFFFF" />
+                <Text style={styles.recommendText}>Rekomendasi</Text>
+            </View>
+            
             <View style={styles.header}>
                 <View style={styles.titleContainer}>
                     <Text style={styles.paliWord}>{item.pali}</Text>
@@ -30,8 +37,16 @@ const WordListItem = ({ item, onPress, isFavorite, onToggleFavorite }) => (
                 )}
             </View>
             
-            {(item.paliVerse || item.detailedIndonesia) && (
+            {(item.paliVerse || item.detailedIndonesia || item.recommendReason) && (
                 <View style={styles.divider} />
+            )}
+            
+            {/* Recommendation reason */}
+            {item.recommendReason && (
+                <View style={styles.reasonContainer}>
+                    <Icon name="lightbulb-o" size={14} color="#3D5A80" style={styles.reasonIcon} />
+                    <Text style={styles.recommendReason}>{item.recommendReason}</Text>
+                </View>
             )}
             
             {item.paliVerse && (
@@ -68,11 +83,31 @@ const styles = StyleSheet.create({
         elevation: 2,
         borderWidth: 1,
         borderColor: '#F0F0F0',
+        position: 'relative',
+    },
+    recommendBadge: {
+        position: 'absolute',
+        top: 0,
+        right: 16,
+        backgroundColor: '#3D5A80',
+        paddingHorizontal: 8,
+        paddingVertical: 4,
+        borderBottomLeftRadius: 8,
+        borderBottomRightRadius: 8,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    recommendText: {
+        color: '#FFFFFF',
+        fontSize: 10,
+        fontWeight: '600',
+        marginLeft: 4,
     },
     header: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'flex-start',
+        marginTop: 10,
     },
     titleContainer: {
         flex: 1,
@@ -81,7 +116,7 @@ const styles = StyleSheet.create({
     paliWord: {
         fontSize: 18,
         fontWeight: '600',
-        color: '#3D5A80', // A calming blue color
+        color: '#3D5A80',
         marginBottom: 4,
     },
     translation: {
@@ -93,6 +128,24 @@ const styles = StyleSheet.create({
         height: 1,
         backgroundColor: '#F0F0F0',
         marginVertical: 10,
+    },
+    reasonContainer: {
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        backgroundColor: '#F0F7FF',
+        padding: 10,
+        borderRadius: 8,
+        marginBottom: 10,
+    },
+    reasonIcon: {
+        marginRight: 8,
+        marginTop: 2,
+    },
+    recommendReason: {
+        fontSize: 14,
+        color: '#3D5A80',
+        flex: 1,
+        lineHeight: 20,
     },
     paliVerse: {
         fontSize: 14,
@@ -111,4 +164,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default WordListItem;
+export default Recommended;

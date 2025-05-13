@@ -1,48 +1,61 @@
-import React from 'react';
 import { View, FlatList, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import WordListItem from './WordListItem';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 const History = ({ history, onWordPress, onClear }) => (
-    <View style={styles.container}>
-        {history.length > 0 && (
-            <TouchableOpacity style={styles.clearButton} onPress={onClear}>
-                <Icon name="trash" size={16} color="#666" />
-                <Text style={styles.clearText}>Hapus Riwayat</Text>
-            </TouchableOpacity>
-        )}
-        <FlatList
-            data={history}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
-                <WordListItem item={item} onPress={onWordPress} />
-            )}
-            ListEmptyComponent={
-                <Text style={styles.emptyText}>Belum ada riwayat pencarian</Text>
-            }
-        />
+  <View style={styles.container}>
+    <View style={styles.header}>
+      <Text style={styles.title}>Riwayat</Text>
+      {history.length > 0 && (
+        <TouchableOpacity onPress={onClear}>
+          <Text style={styles.clearText}>Hapus</Text>
+        </TouchableOpacity>
+      )}
     </View>
+    
+    <FlatList
+      data={history}
+      keyExtractor={(item) => item.id}
+      renderItem={({ item }) => (
+        <WordListItem item={item} onPress={onWordPress} />
+      )}
+      ListEmptyComponent={
+        <View style={styles.emptyContainer}>
+          <Text style={styles.emptyText}>Belum ada riwayat pencarian</Text>
+        </View>
+      }
+    />
+  </View>
 );
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    clearButton: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        padding: 8,
-        marginBottom: 8,
-    },
-    clearText: {
-        marginLeft: 8,
-        color: '#666',
-    },
-    emptyText: {
-        textAlign: 'center',
-        color: '#999',
-        fontStyle: 'italic',
-    }
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f0f0f0',
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  clearText: {
+    fontSize: 14,
+    color: '#007AFF',
+  },
+  emptyContainer: {
+    padding: 24,
+    alignItems: 'center',
+  },
+  emptyText: {
+    color: '#999',
+  }
 });
 
 export default History;

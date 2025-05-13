@@ -2,7 +2,7 @@ import { StyleSheet, Platform, StatusBar } from 'react-native';
 
 // Define theme colors
 const theme = {
-    primary: '#FF7F50',
+    primary: 'blue',
     primaryLight: '#FFE4DC',
     primaryDark: '#E66C44',
     text: '#2D3436',

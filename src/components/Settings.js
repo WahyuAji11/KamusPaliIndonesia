@@ -1,32 +1,76 @@
-import React from 'react';
-import { StyleSheet, Switch, Text, useColorScheme, View } from 'react-native';
-import { Appbar, useTheme } from 'react-native-paper';
+import React, { useState } from 'react';
+import { Linking, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Appbar, Surface, useTheme } from 'react-native-paper';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-const Settings = ({ isDarkMode, toggleDarkMode }) => {
-    const colorScheme = useColorScheme(); // Detect system dark/light mode
-    const theme = useTheme(); // Use theme from react-native-paper
+const Settings = () => {
+    const theme = useTheme();
+    const [language, setLanguage] = useState('id');
+
+    const ContactItem = ({ icon, text, url }) => (
+        <Surface style={styles.contactSurface} elevation={1}>
+            <View style={styles.contactItem}>
+                <FontAwesome5 name={icon} size={24} color={theme.colors.primary} solid />
+                <Text
+                    style={[styles.contactText, { color: theme.colors.primary }]}
+                    onPress={() => url && Linking.openURL(url)}
+                >
+                    {text}
+                </Text>
+            </View>
+        </Surface>
+    );
 
     return (
         <View style={[styles.container, { backgroundColor: theme.colors.background }]}>            
             <Appbar.Header>
-                <Appbar.BackAction onPress={() => {}} />
-                <Appbar.Content title="Settings" />
+                {/* <Appbar.BackAction onPress={() => {}} />
+                <Appbar.Content title="Dukungan" /> */}
+                <TouchableOpacity 
+                    onPress={() => setLanguage(language === 'id' ? 'en' : 'id')}
+                    style={styles.languageButton}
+                >
+                    <Text style={[styles.languageButtonText, { color: theme.colors.primary }]}>
+                        {language === 'id' ? '🇬🇧' : '🇮🇩'}
+                    </Text>
+                </TouchableOpacity>
             </Appbar.Header>
             
-            <View style={styles.content}>
-                <View style={styles.settingItem}>
-                    <FontAwesome5 name="moon" size={24} color={theme.colors.text} solid />
-                    <Text style={[styles.settingText, { color: theme.colors.text }]}>Dark Mode</Text>
-                    <Switch
-                        value={isDarkMode}
-                        onValueChange={toggleDarkMode}
-                        thumbColor={isDarkMode ? theme.colors.primary : theme.colors.accent}
-                        trackColor={{ false: theme.colors.disabled, true: theme.colors.primary }}
+            <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
+                <Surface style={styles.headerSection} elevation={2}>
+                    <Text style={[styles.welcomeText, { color: theme.colors.text }]}> 
+                        {language === 'id' ? "Selamat datang di Pusat Dukungan" : "Welcome to Support Center"}
+                    </Text>
+                    <Text style={[styles.infoText, { color: theme.colors.text }]}> 
+                        {language === 'id' ? 
+                            "Jika ada pertanyaan, silakan hubungi salah satu pembuat melalui Instagram atau email. Terima kasih atas pengertiannya. Mohon maaf atas keterlambatan." : 
+                            "If you have any questions, feel free to contact one of the creators via Instagram or email. Thank you for your understanding. We apologize for any delays."}
+                    </Text>
+                </Surface>
+
+                <View style={styles.contactsContainer}>
+                    <ContactItem 
+                        icon="phone" 
+                        text="0813-5971-9288" 
+                        url="tel:0813-5971-9288"
+                    />
+                    <ContactItem 
+                        icon="envelope" 
+                        text="Email kami" 
+                        url="mailto:rtxalham@gmail.com"
+                    />
+                    <ContactItem 
+                        icon="instagram" 
+                        text="Instagram(@w.aji_666)" 
+                        url="https://www.instagram.com/w.aji_666/"
+                    />
+                    <ContactItem 
+                        icon="instagram" 
+                        text="Instagram(@nitrogen7_)" 
+                        url="https://www.instagram.com/nitrogen7_/"
                     />
                 </View>
-                <Text style={[styles.infoText, { color: theme.colors.text }]}>Dark mode will follow your system preference.</Text>
-            </View>
+            </ScrollView>
         </View>
     );
 };
@@ -38,21 +82,46 @@ const styles = StyleSheet.create({
     content: {
         padding: 16,
     },
-    settingItem: {
-        flexDirection: 'row',
-        alignItems: 'center',
+    headerSection: {
+        padding: 16,
+        borderRadius: 8,
         marginBottom: 16,
     },
-    settingText: {
+    welcomeText: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 12,
+    },
+    infoText: {
+        fontSize: 16,
+        lineHeight: 24,
+    },
+    contactsContainer: {
+        gap: 12,
+        marginBottom: 16,
+    },
+    contactSurface: {
+        borderRadius: 8,
+        overflow: 'hidden',
+    },
+    contactItem: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 16,
+    },
+    contactText: {
         flex: 1,
         marginLeft: 16,
         fontSize: 16,
+        fontWeight: '500',
     },
-    infoText: {
-        fontSize: 14,
-        marginTop: 8,
-        fontStyle: 'italic',
+    languageButton: {
+        padding: 8,
+        marginRight: 8,
     },
+    languageButtonText: {
+        fontSize: 20,
+    }
 });
 
 export default Settings;
