@@ -22,11 +22,11 @@ const Settings = () => {
     );
 
     return (
-        <View style={[styles.container, { backgroundColor: theme.colors.background }]}>            
+        <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
             <Appbar.Header>
                 {/* <Appbar.BackAction onPress={() => {}} />
                 <Appbar.Content title="Dukungan" /> */}
-                <TouchableOpacity 
+                <TouchableOpacity
                     onPress={() => setLanguage(language === 'id' ? 'en' : 'id')}
                     style={styles.languageButton}
                 >
@@ -35,39 +35,34 @@ const Settings = () => {
                     </Text>
                 </TouchableOpacity>
             </Appbar.Header>
-            
+
             <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
                 <Surface style={styles.headerSection} elevation={2}>
-                    <Text style={[styles.welcomeText, { color: theme.colors.text }]}> 
+                    <Text style={[styles.welcomeText, { color: theme.colors.text }]}>
                         {language === 'id' ? "Selamat datang di Pusat Dukungan" : "Welcome to Support Center"}
                     </Text>
-                    <Text style={[styles.infoText, { color: theme.colors.text }]}> 
-                        {language === 'id' ? 
-                            "Jika ada pertanyaan, silakan hubungi salah satu pembuat melalui Instagram atau email. Terima kasih atas pengertiannya. Mohon maaf atas keterlambatan." : 
+                    <Text style={[styles.infoText, { color: theme.colors.text }]}>
+                        {language === 'id' ?
+                            "Jika ada pertanyaan, silakan hubungi salah satu pembuat melalui Instagram atau email. Terima kasih atas pengertiannya. Mohon maaf atas keterlambatan." :
                             "If you have any questions, feel free to contact one of the creators via Instagram or email. Thank you for your understanding. We apologize for any delays."}
                     </Text>
                 </Surface>
 
                 <View style={styles.contactsContainer}>
-                    <ContactItem 
-                        icon="phone" 
-                        text="0813-5971-9288" 
-                        url="tel:0813-5971-9288"
-                    />
-                    <ContactItem 
-                        icon="envelope" 
-                        text="Email kami" 
+                    <ContactItem
+                        icon="dharmachakra"
+                        text="Sangha Agung Indonesia"
                         url="mailto:rtxalham@gmail.com"
                     />
-                    <ContactItem 
-                        icon="instagram" 
-                        text="Instagram(@w.aji_666)" 
-                        url="https://www.instagram.com/w.aji_666/"
+                    <ContactItem
+                        icon="phone"
+                        text="928349282"
+                        url="tel:928349282"
                     />
-                    <ContactItem 
-                        icon="instagram" 
-                        text="Instagram(@nitrogen7_)" 
-                        url="https://www.instagram.com/nitrogen7_/"
+                    <ContactItem
+                        icon="instagram"
+                        text="Instagram(@sanghaagungindonesia)"
+                        url="https://www.instagram.com/sanghaagungindonesia/"
                     />
                 </View>
             </ScrollView>
