@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "Kamus Pali Indonesia (Beta)",
+    "slug": "KamusPaliIndonesia",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon_apk.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.wahyuaji.KamusPaliIndonesia"
+    },
+    "web": {
+      "favicon": "./assets/icon.png"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/d7733c1a-bdf1-4f63-9637-9676fe38b5a5"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f0923e41-7566-49f9-a57c-e37da877aea9"
+      }
+    },
+    "owner": "mahiro_ay"
+  }
+}
