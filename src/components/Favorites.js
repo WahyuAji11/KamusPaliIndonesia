@@ -7,9 +7,9 @@ const Favorites = ({ favorites, onWordPress, onToggleFavorite }) => {
     const [isAlphabetical, setIsAlphabetical] = useState(false);
 
     useEffect(() => {
-        if (isAlphabetical) {
+        if(isAlphabetical) {
             // Sort alphabetically by pali word
-            const sorted = [...favorites].sort((a, b) => 
+            const sorted = [...favorites].sort((a, b) =>
                 a.pali.localeCompare(b.pali)
             );
             setSortedData(sorted);
@@ -70,7 +70,7 @@ const Favorites = ({ favorites, onWordPress, onToggleFavorite }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
     },
     header: {
         flexDirection: 'row',

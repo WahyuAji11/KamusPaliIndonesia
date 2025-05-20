@@ -2,7 +2,7 @@ import { StyleSheet, Platform, StatusBar } from 'react-native';
 
 // Define theme colors
 const theme = {
-    primary: 'blue',
+    primary: '#f38c4c',
     primaryLight: '#FFE4DC',
     primaryDark: '#E66C44',
     text: '#2D3436',
@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
         paddingTop: Platform.OS === 'ios' ? 20 : 40,
         paddingBottom: 20,
         paddingHorizontal: 16,
-        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        backgroundColor: 'rgba(255, 255, 255, 0.62)',
         borderBottomWidth: 1,
         borderBottomColor: theme.border,
     },

@@ -16,7 +16,7 @@ const Recommended = ({ item, onPress, isFavorite, onToggleFavorite }) => (
                 <Icon name="compass" size={12} color="#FFFFFF" />
                 <Text style={styles.recommendText}>Rekomendasi</Text>
             </View>
-            
+
             <View style={styles.header}>
                 <View style={styles.titleContainer}>
                     <Text style={styles.paliWord}>{item.pali}</Text>
@@ -36,11 +36,11 @@ const Recommended = ({ item, onPress, isFavorite, onToggleFavorite }) => (
                     </TouchableOpacity>
                 )}
             </View>
-            
+
             {(item.paliVerse || item.detailedIndonesia || item.recommendReason) && (
                 <View style={styles.divider} />
             )}
-            
+
             {/* Recommendation reason */}
             {item.recommendReason && (
                 <View style={styles.reasonContainer}>
@@ -48,13 +48,13 @@ const Recommended = ({ item, onPress, isFavorite, onToggleFavorite }) => (
                     <Text style={styles.recommendReason}>{item.recommendReason}</Text>
                 </View>
             )}
-            
+
             {item.paliVerse && (
                 <Text style={styles.paliVerse} numberOfLines={2}>
                     {item.paliVerse}
                 </Text>
             )}
-            
+
             {item.detailedIndonesia && (
                 <Text style={styles.detailedTranslation} numberOfLines={2}>
                     {item.detailedIndonesia}
