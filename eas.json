@@ -10,8 +10,7 @@
       "android": {
         "buildType": "apk"
       },
-      "channel": "preview",
-      "developmentClient": true
+      "channel": "preview"
     },
     "production": {
       "android": {

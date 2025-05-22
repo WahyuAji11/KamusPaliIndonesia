@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as Updates from 'expo-updates';
+import { useState, useEffect } from 'react';
 import {
+  ActivityIndicator,
+  Animated,
+  Alert,
   Linking,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
-  ActivityIndicator,
-  Animated,
-  Dimensions
+  View
 } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import * as Updates from 'expo-updates';
+
+// Key for storing language preference
+const LANGUAGE_STORAGE_KEY = '@app_language';
 
 const Settings = () => {
   const [language, setLanguage] = useState('id');
@@ -24,13 +27,36 @@ const Settings = () => {
   const notificationOpacity = useState(new Animated.Value(0))[0];
   const notificationTranslateY = useState(new Animated.Value(-20))[0];
   
+  // Load saved language preference when component mounts
+  useEffect(() => {
+    const loadSavedLanguage = async () => {
+      try {
+        const savedLanguage = await AsyncStorage.getItem(LANGUAGE_STORAGE_KEY);
+        if (savedLanguage !== null) {
+          setLanguage(savedLanguage);
+        }
+      } catch (error) {
+        console.error('Error loading language preference:', error);
+      }
+    };
+    
+    loadSavedLanguage();
+  }, []);
+  
   // Bahasa yang lebih simpel - hanya 3 bahasa
   const languages = [
     { code: 'id', name: 'ID', flag: '🇮🇩' },
     { code: 'en', name: 'EN', flag: '🇬🇧' },
     { code: 'zh', name: 'CN', flag: '🇨🇳' },
     { code: 'ja', name: 'JP', flag: '🇯🇵' },
-    { code: 'ko', name: 'KR', flag: '🇰🇷' }
+    // bahasa baru jangan di kasih kasih alert aja dulu 
+    { code: 'ko', name: 'KR', flag: '🇰🇷' },
+    { code: 'th', name: 'TH', flag: '🇹🇭' },
+    { code: 'vi', name: 'VN', flag: '🇻🇳' },
+    // { code: 'ms', name: 'MS', flag: '🇲🇾' },
+    { code: 'fr', name: 'FR', flag: '🇫🇷' },
+    { code: 'de', name: 'DE', flag: '🇩🇪' },
+    { code: 'es', name: 'ES', flag: '🇪🇸' }
   ];
 
   // Terjemahan
@@ -43,7 +69,8 @@ const Settings = () => {
       clearCacheSuccess: "Cache berhasil dihapus",
       clearCacheError: "Gagal menghapus cache",
       reloading: "Memuat ulang...",
-      contactUs: "Hubungi Kami"
+      contactUs: "Hubungi Kami",
+      confirmClearCache: "Apakah Anda yakin ingin menghapus cache?"
     },
     en: {
       welcome: "Support Center",
@@ -53,7 +80,8 @@ const Settings = () => {
       clearCacheSuccess: "Cache cleared successfully",
       clearCacheError: "Failed to clear cache",
       reloading: "Reloading...",
-      contactUs: "Contact Us"
+      contactUs: "Contact Us",
+      confirmClearCache: "Are you sure you want to clear the cache?"
     },
     zh: {
       welcome: "支持中心",
@@ -63,7 +91,8 @@ const Settings = () => {
       clearCacheSuccess: "缓存清除成功",
       clearCacheError: "清除缓存失败",
       reloading: "正在重新加载...",
-      contactUs: "联系我们"
+      contactUs: "联系我们",
+      confirmClearCache: "您确定要清除缓存吗？"
     },
      ja: {
       welcome: "サポートセンターへようこそ",
@@ -76,7 +105,8 @@ const Settings = () => {
       contactUs: "お問い合わせ",
       settings: "設定",
       language: "言語",
-      selectLanguage: "言語を選択"
+      selectLanguage: "言語を選択",
+      confirmClearCache: "キャッシュをクリアしてもよろしいですか？"
     },
     ko: {
       welcome: "지원 센터에 오신 것을 환영합니다",
@@ -89,11 +119,147 @@ const Settings = () => {
       contactUs: "문의하기",
       settings: "설정",
       language: "언어",
-      selectLanguage: "언어 선택"
+      selectLanguage: "언어 선택",
+      confirmClearCache: "캐시를 지우시겠습니까?"
+    },
+    th:{
+      welcome: "ยินดีต้อนรับสู่ศูนย์สนับสนุน",
+      info: "หากคุณมีคำถามใด ๆ โปรดติดต่อผู้สร้างผ่าน Instagram หรืออีเมล ขอบคุณสำหรับความเข้าใจของคุณ ขออภัยในความล่าช้า",
+      clearCache: "ล้างแคช",
+      reload: "โหลดแอปใหม่",
+      clearCacheSuccess: "ล้างแคชสำเร็จ",
+      clearCacheError: "ล้างแคชไม่สำเร็จ",
+      reloading: "กำลังโหลดใหม่...",
+      contactUs: "ติดต่อเรา",
+      settings: "การตั้งค่า",
+      confirmClearCache: "คุณแน่ใจหรือไม่ว่าต้องการล้างแคช?"
+    },
+    vi: {
+      welcome: "Chào mừng đến với Trung tâm hỗ trợ",
+      info: "Nếu bạn có bất kỳ câu hỏi nào, hãy liên hệ với một trong những người tạo ra qua Instagram hoặc email. Cảm ơn bạn đã thông cảm.",
+      clearCache: "Xóa bộ nhớ cache",
+      reload: "Tải lại ứng dụng",
+      clearCacheSuccess: "Xóa bộ nhớ cache thành công",
+      clearCacheError: "Xóa bộ nhớ cache không thành công",
+      reloading: "Đang tải lại...",
+      contactUs: "Liên hệ với chúng tôi",
+      settings: "Cài đặt",
+      confirmClearCache: "Bạn có chắc chắn muốn xóa bộ nhớ cache không?"
+    },
+    fr: {
+      welcome: "Centre de support",
+      info: "Si vous avez des questions, n'hésitez pas à contacter l'un des créateurs via Instagram ou par e-mail. Merci de votre compréhension.",
+      clearCache: "Vider le cache",
+      reload: "Recharger l'application",
+      clearCacheSuccess: "Cache vidé avec succès",
+      clearCacheError: "Échec de la vidange du cache",
+      reloading: "Rechargement...",
+      contactUs: "Contactez-nous",
+      confirmClearCache: "Êtes-vous sûr de vouloir vider le cache ?"
+    },
+    de: {
+      welcome: "Supportzentrum",
+      info: "Wenn Sie Fragen haben, wenden Sie sich bitte über Instagram oder E-Mail an einen der Ersteller. Vielen Dank für Ihr Verständnis.",
+      clearCache: "Cache leeren",
+      reload: "App neu laden",
+      clearCacheSuccess: "Cache erfolgreich geleert",
+      clearCacheError: "Cache leeren fehlgeschlagen",
+      reloading: "Wird neu geladen...",
+      contactUs: "Kontaktiere uns",
+      confirmClearCache: "Sind Sie sicher, dass Sie den Cache leeren möchten?"
+    },
+    es: {
+      welcome: "Centro de Soporte",
+      info: "Si tienes alguna pregunta, no dudes en contactar a uno de los creadores a través de Instagram o correo electrónico. Gracias por tu comprensión.",
+      clearCache: "Limpiar caché",
+      reload: "Recargar aplicación",
+      clearCacheSuccess: "Caché limpiada con éxito",
+      clearCacheError: "Error al limpiar caché",
+      reloading: "Recargando...",
+      contactUs: "Contáctanos",
+      confirmClearCache: "¿Estás seguro de que quieres limpiar la caché?"
+    }
+  // Tambahkan bahasa baru di sini
+  };
+
+  // Define reloadTexts object for reload confirmation dialogs
+  const reloadTexts = {
+    id: {
+      title: "Muat Ulang Aplikasi",
+      message: "Apakah Anda yakin ingin memuat ulang aplikasi?",
+      cancel: "Batal",
+      confirm: "Ya, Muat Ulang"
+    },
+    en: {
+      title: "Reload Application",
+      message: "Are you sure you want to reload the application?",
+      cancel: "Cancel",
+      confirm: "Yes, Reload"
+    },
+    zh: {
+      title: "重新加载应用程序",
+      message: "您确定要重新加载应用程序吗？",
+      cancel: "取消",
+      confirm: "是的，重新加载"
+    },
+    ja: {
+      title: "アプリを再読み込み",
+      message: "アプリを再読み込みしてもよろしいですか？",
+      cancel: "キャンセル",
+      confirm: "はい、再読み込み"
+    },
+    ko: {
+      title: "앱 다시 로드",
+      message: "앱을 다시 로드하시겠습니까?",
+      cancel: "취소",
+      confirm: "예, 다시 로드"
+    },
+    th: {
+      title: "โหลดแอปใหม่",
+      message: "คุณแน่ใจหรือไม่ว่าต้องการโหลดแอปใหม่?",
+      cancel: "ยกเลิก",
+      confirm: "ใช่, โหลดใหม่"
+    },
+    vi: {
+      title: "Tải lại ứng dụng",
+      message: "Bạn có chắc chắn muốn tải lại ứng dụng không?",
+      cancel: "Hủy",
+      confirm: "Có, Tải lại"
+    },
+    fr: {
+      title: "Recharger l'application",
+      message: "Êtes-vous sûr de vouloir recharger l'application?",
+      cancel: "Annuler",
+      confirm: "Oui, Recharger"
+    },
+    de: {
+      title: "App neu laden",
+      message: "Sind Sie sicher, dass Sie die App neu laden möchten?",
+      cancel: "Abbrechen",
+      confirm: "Ja, Neu laden"
+    },
+    es: {
+      title: "Recargar aplicación",
+      message: "¿Estás seguro de que quieres recargar la aplicación?",
+      cancel: "Cancelar",
+      confirm: "Sí, Recargar"
     }
   };
 
   const t = translations[language] || translations.id;
+
+  // Function to handle language change
+  const handleLanguageChange = async (langCode) => {
+    try {
+      // Save language preference to AsyncStorage
+      await AsyncStorage.setItem(LANGUAGE_STORAGE_KEY, langCode);
+      // Update state
+      setLanguage(langCode);
+    } catch (error) {
+      console.error('Error saving language preference:', error);
+      showNotification('Failed to save language preference', 'error');
+    }
+  };
 
   // Tampilkan notifikasi modern
   const showNotification = (message, type = 'success') => {
@@ -135,11 +301,33 @@ const Settings = () => {
     }, 3000);
   };
 
+  // Fungsi hapus cache dengan konfirmasi
+  const confirmClearCache = () => {
+    Alert.alert(
+      "Clear Cache",
+      t.confirmClearCache,
+      [
+        {
+          text: "Cancel",
+          style: "cancel"
+        },
+        { 
+          text: "OK", 
+          onPress: clearCache
+        }
+      ]
+    );
+  };
+
   // Fungsi hapus cache
   const clearCache = async () => {
     try {
       setIsClearing(true);
+      // Save the current language before clearing
+      const currentLang = language;
       await AsyncStorage.clear();
+      // Restore the language preference
+      await AsyncStorage.setItem(LANGUAGE_STORAGE_KEY, currentLang);
       showNotification(t.clearCacheSuccess, 'success');
     } catch (error) {
       showNotification(t.clearCacheError, 'error');
@@ -151,23 +339,42 @@ const Settings = () => {
 
   // Fungsi muat ulang aplikasi
   const reloadApp = async () => {
-    try {
-      setIsReloading(true);
-      showNotification(t.reloading, 'info');
-      
-      // Tunggu sebentar untuk menampilkan notifikasi
-      setTimeout(async () => {
-        try {
-          await Updates.reloadAsync();
-        } catch (error) {
-          console.error('Error reloading app:', error);
-          setIsReloading(false);
-        }
-      }, 1500);
-    } catch (error) {
-      console.error('Error in reload process:', error);
-      setIsReloading(false);
-    }
+    const currentLang = language || ''; // ambil bahasa yang aktif
+    const text = reloadTexts[currentLang] || reloadTexts['en'];
+
+    Alert.alert(
+      text.title,
+      text.message,
+      [
+        {
+          text: text.cancel,
+          onPress: () => console.log('Muat ulang dibatalkan'),
+          style: 'cancel',
+        },
+        {
+          text: text.confirm,
+          onPress: async () => {
+            try {
+              setIsReloading(true);
+              showNotification(t.reloading, 'info');
+
+              setTimeout(async () => {
+                try {
+                  await Updates.reloadAsync();
+                } catch (error) {
+                  console.error('Gagal memuat ulang:', error);
+                  setIsReloading(false);
+                }
+              }, 1500);
+            } catch (error) {
+              console.error('Error di proses reload:', error);
+              setIsReloading(false);
+            }
+          },
+        },
+      ],
+      { cancelable: false }
+    );
   };
 
   const ContactItem = ({ icon, text, url }) => (
@@ -190,7 +397,11 @@ const Settings = () => {
     <View style={styles.container}>
       {/* Header tanpa tulisan "Pengaturan" */}
       <View style={styles.header}>
-        <View style={styles.languageSelector}>
+        <ScrollView 
+          horizontal 
+          showsHorizontalScrollIndicator={false} 
+          contentContainerStyle={styles.languageSelector}
+        >
           {languages.map((lang) => (
             <TouchableOpacity
               key={lang.code}
@@ -198,14 +409,14 @@ const Settings = () => {
                 styles.languageButton,
                 language === lang.code && styles.activeLanguageButton
               ]}
-              onPress={() => setLanguage(lang.code)}
+              onPress={() => handleLanguageChange(lang.code)}
             >
               <Text style={styles.languageButtonText}>
                 {lang.flag}
               </Text>
             </TouchableOpacity>
           ))}
-        </View>
+        </ScrollView>
       </View>
 
       {/* Notifikasi Modern */}
@@ -244,7 +455,7 @@ const Settings = () => {
         <View style={styles.actionButtonsContainer}>
           <TouchableOpacity 
             style={[styles.actionButton, styles.primaryButton]}
-            onPress={clearCache}
+            onPress={confirmClearCache}
             disabled={isClearing}
           >
             {isClearing ? (
@@ -311,7 +522,10 @@ const styles = StyleSheet.create({
   },
   languageSelector: {
     flexDirection: 'row',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
     gap: 8,
+    alignItems: 'center'
   },
   languageButton: {
     width: 40,
