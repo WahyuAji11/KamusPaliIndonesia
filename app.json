@@ -1,8 +1,8 @@
-{
-  "expo": {
+{  "expo": {
     "name": "Kamus Pali Indonesia (Beta)",
     "slug": "KamusPaliIndonesia",
     "owner": "kamus-pali-team",
+    "assetBundlePatterns": ["**/*"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon_apk.png",
@@ -18,7 +18,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icon_apk.png", // Ubah dari icon.png ke icon_apk.png
+        "foregroundImage": "./assets/icon.png", // Ubah dari icon.png ke icon_apk.png
         "backgroundColor": "#ffffff"
       },
       "package": "com.wahyuaji.KamusPaliIndonesia"
