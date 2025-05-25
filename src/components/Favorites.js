@@ -80,6 +80,9 @@ const styles = StyleSheet.create({
         paddingVertical: 12,
         borderBottomWidth: 1,
         borderBottomColor: '#f0f0f0',
+        backgroundColor: '#ffffff',
+        elevation: 2,
+        borderRadius: 9,
     },
     title: {
         fontSize: 16,

@@ -8,7 +8,7 @@ const TabBar = ({ activeTab, onTabChange }) => {
     const handleHistoryPress = useCallback(() => onTabChange('history'), [onTabChange]);
     const handleFavoritesPress = useCallback(() => onTabChange('favorites'), [onTabChange]);
     const handleSettingsPress = useCallback(() => onTabChange('settings'), [onTabChange]);
-
+    const handleRecommendedPress = useCallback(() => onTabChange('recommended'), [onTabChange]);
     return (
         <View style={styles.tabContainer}>
             <TabItem
@@ -18,11 +18,12 @@ const TabBar = ({ activeTab, onTabChange }) => {
                 label="Cari"
             />
             <TabItem
-                isActive={activeTab === 'history'}
-                onPress={handleHistoryPress}
-                icon="history"
-                label="Riwayat"
-            />
+                isActive={activeTab === 'recommended'}
+                onPress={handleRecommendedPress}
+                icon="compass"
+                label="history"
+                />
+           
             <TabItem
                 isActive={activeTab === 'favorites'}
                 onPress={handleFavoritesPress}

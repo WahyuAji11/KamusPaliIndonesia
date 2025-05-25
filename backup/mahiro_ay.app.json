@@ -1,13 +1,12 @@
-{  "expo": {
+{
+  "expo": {
     "name": "Kamus Pali Indonesia (Beta)",
     "slug": "KamusPaliIndonesia",
-    "owner": "kamus-pali-team",
-    "assetBundlePatterns": ["**/*"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon_apk.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": false,
+    "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -18,25 +17,25 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icon.png", // Ubah dari icon.png ke icon_apk.png
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.wahyuaji.KamusPaliIndonesia"
     },
     "web": {
-      "favicon": "./assets/icon_apk.png" // Ubah dari icon.png ke icon_apk.png
+      "favicon": "./assets/icon.png"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/d7733c1a-bdf1-4f63-9637-9676fe38b5a5"
     },
     "extra": {
       "eas": {
-        "projectId": "d7733c1a-bdf1-4f63-9637-9676fe38b5a5"
+        "projectId": "f0923e41-7566-49f9-a57c-e37da877aea9"
       }
     },
-    "runtimeVersion": "1.0.0",
-    // "runtimeVersion": {
-    //   "policy": "appVersion"
-    // },
-    "updates": {
-      "url": "https://u.expo.dev/d7733c1a-bdf1-4f63-9637-9676fe38b5a5"
-    }
+    "owner": "mahiro_ay"
   }
 }
